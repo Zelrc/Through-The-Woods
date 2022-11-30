@@ -4,27 +4,32 @@ using UnityEngine;
 
 public enum CharacterSkills
 {
-    Fireball,
-    Iceball,
-    FireSword,
-    IceSword,
-    Earthquake,
-    LightningSpear
+    LeechAxe,
+    AxeSlam,
+    GretelParry,
+    HomingProjectile,
+    Heal,
+    BlessingOfTheWind
+}
+public enum CharacterNames
+{
+    Hanzel,
+    Gretel,
+    Fairy
 }
 
-[CreateAssetMenu(fileName = "Enemy", menuName = "Character/Player Characters")]
+[CreateAssetMenu(fileName = "Player", menuName = "Character/Player Characters")]
 public class PlayerSOs : ScriptableObject
 {
-    public new string name;
+    public new CharacterNames name;
 
-    public int health;
-    public int attack;
+    public int maxHealth;
 
-    public Animation anim;
     public Sprite art;
+    public Sprite portrait;
 
-    public CharacterSkills Skill1;
-    public CharacterSkills Skill2;
-    public CharacterSkills Skill3;
-    public CharacterSkills Skill4;
+    public AbilitySO Skill1;
+    public AbilitySO Skill2;
+    public AbilitySO Skill3;
+    //public CharacterSkills Skill4;
 }
