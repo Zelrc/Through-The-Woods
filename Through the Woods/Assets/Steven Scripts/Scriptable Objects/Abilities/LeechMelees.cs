@@ -5,8 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ability", menuName = "Character/Abilities/LeechMelees")]
 public class LeechMelees : AbilitySO
 {
-    public override void Activate()
+    //int currentCD;
+    
+    public override void Activate(CharacterScripts character)
     {
-        
+        //character.AoECircle.SetActive(true);
+
     }
 }

@@ -17,8 +17,6 @@ public class AbilitySO : ScriptableObject
     public Sprite skillSprite;
     public SkillType type;
 
-    public GameObject area;
-
     public int CD;
     public bool active;
 
@@ -31,7 +29,7 @@ public class AbilitySO : ScriptableObject
     }
      
     
-    public virtual void Activate()
+    public virtual void Activate(CharacterScripts character)
     {
         
     }

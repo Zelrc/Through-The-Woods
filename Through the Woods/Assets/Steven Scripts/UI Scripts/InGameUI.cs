@@ -14,6 +14,15 @@ public class InGameUI : MonoBehaviour
 
     public static CharacterScripts currentSelectedCharacter;
 
+    private void Awake()
+    {
+        skill1.onClick.RemoveListener(SkillButton1Click);
+        skill1.onClick.AddListener(SkillButton1Click);
+        skill2.onClick.RemoveListener(SkillButton2Click);
+        skill2.onClick.AddListener(SkillButton2Click);
+        skill3.onClick.RemoveListener(SkillButton3Click);
+        skill3.onClick.AddListener(SkillButton3Click);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +54,20 @@ public class InGameUI : MonoBehaviour
         skill3.GetComponent<Image>().sprite = character.character.Skill3.skillSprite;
 
         portrait.sprite = character.character.portrait;
+    }
+
+    void SkillButton1Click()
+    {
+        currentSelectedCharacter.character.Skill1.Activate(currentSelectedCharacter);
+    }
+
+    void SkillButton2Click()
+    {
+        currentSelectedCharacter.character.Skill2.Activate(currentSelectedCharacter);
+    }
+
+    void SkillButton3Click()
+    {
+        currentSelectedCharacter.character.Skill3.Activate(currentSelectedCharacter);
     }
 }

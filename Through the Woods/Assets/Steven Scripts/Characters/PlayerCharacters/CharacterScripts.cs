@@ -15,9 +15,12 @@ public class CharacterScripts : MonoBehaviour
 
     int health;
 
+    public GameObject AoECircle;
+
+
     SpriteRenderer image;
     // Start is called before the first frame update
-
+    
     void Start()
     {
         image = GetComponent<SpriteRenderer>();
