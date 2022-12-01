@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System;
+using UnityEngine.AI;
 
 public class DragLine : MonoBehaviour
 {
@@ -125,7 +126,8 @@ public class DragLine : MonoBehaviour
             {
                 Debug.Log(currentCharacter);
                 LineRenderer tempLR = currentCharacter.GetComponent<LineRenderer>();
-                currentCharacter.transform.DOMove(tempLR.GetPosition(1), 0.8f);
+                //currentCharacter.transform.DOMove(tempLR.GetPosition(1), 0.8f);
+                currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
 
                 //tempLR.enabled = true;
                 //tempLR.positionCount = 2;

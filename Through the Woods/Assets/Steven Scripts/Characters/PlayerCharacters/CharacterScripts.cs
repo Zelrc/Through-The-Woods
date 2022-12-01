@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public enum state
 {
@@ -17,15 +18,18 @@ public class CharacterScripts : MonoBehaviour
 
     public GameObject AoECircle;
 
+    NavMeshAgent agent;
 
     SpriteRenderer image;
     // Start is called before the first frame update
     
     void Start()
     {
-        image = GetComponent<SpriteRenderer>();
-        image.sprite = character.art;
-
+        //image = GetComponent<SpriteRenderer>();
+        //image.sprite = character.art;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         
     }
 
