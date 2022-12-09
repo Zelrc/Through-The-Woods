@@ -23,6 +23,8 @@ public class CharacterScripts : MonoBehaviour
     public bool parryBuff = false;
 
     SpriteRenderer image;
+
+    public Animator anim;
     // Start is called before the first frame update
     
     void Start()
@@ -32,7 +34,7 @@ public class CharacterScripts : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
