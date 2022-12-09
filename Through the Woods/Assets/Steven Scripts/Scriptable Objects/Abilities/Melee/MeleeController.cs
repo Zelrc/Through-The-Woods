@@ -25,7 +25,7 @@ public class MeleeController : MonoBehaviour
                     }
 
                 }
-                StartCoroutine(AnimationCour());
+                //StartCoroutine(AnimationCour());
                 slamScript.active = false;
                 slamScript.character.AoECircle.SetActive(false);
             }
@@ -35,11 +35,5 @@ public class MeleeController : MonoBehaviour
         }
     }
 
-    IEnumerator AnimationCour()
-    {
-        //yield return null;
-        yield return new WaitForSeconds(slamScript.animationTime);
-        slamScript.character.agent.isStopped = false;
-        Debug.Log("should continue to go");
-    }
+    
 }
