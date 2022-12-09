@@ -34,6 +34,7 @@ public class DialogueManager : Singleton<DialogueManager>
             return;
         }
 
+        
         string sentence = sentences.Dequeue();
         Debug.Log(sentence);
 
@@ -53,9 +54,9 @@ public class DialogueManager : Singleton<DialogueManager>
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.01f);
         }
     }
     
-
+    
 }

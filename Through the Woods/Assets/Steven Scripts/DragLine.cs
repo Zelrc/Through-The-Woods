@@ -14,10 +14,13 @@ public class DragLine : MonoBehaviour
     LineRenderer lr;
     bool dragging;
     public static GameObject character;
+    public static GameObject target;
     bool colliderBlock;
-    float characterRadius = 1f;
+    float characterRadius = 0.5f;
 
-    static bool ActionPhase = false;
+    public static bool choosingTarget = false;
+
+    public static bool ActionPhase = false;
     
     HashSet<GameObject> charactersMoving = new HashSet<GameObject>();
 
@@ -37,111 +40,89 @@ public class DragLine : MonoBehaviour
 
         if(!ActionPhase)
         {
-            if (Input.GetMouseButtonDown(0))
+            if(!choosingTarget)
             {
-                if (hit.collider != null && hit.transform.tag == "Character")
+                if (Input.GetMouseButtonDown(0))
                 {
-                    lr = hit.transform.GetComponent<LineRenderer>();
-
-                    lr.enabled = true;
-                    lr.positionCount = 2;
-                    startPos = hit.transform.GetComponent<Renderer>().bounds.center;
-                    lr.SetPosition(0, startPos);
-                    character = hit.transform.gameObject;
-                    lr.useWorldSpace = true;
-                    dragging = true;
-
-                    characterCall?.Invoke(character.GetComponent<CharacterScripts>());
-                }
-            }
-
-
-
-            if (dragging)
-            {
-                if (Input.GetMouseButton(0))
-                {
-
-
-                    if (colliderBlock)
+                    if(!choosingTarget)
                     {
-                        //show red
-                    }
+                        if (hit.collider != null && hit.transform.tag == "Character")
+                        {
+                            lr = hit.transform.GetComponent<LineRenderer>();
 
+                            lr.enabled = true;
+                            lr.positionCount = 2;
+                            startPos = hit.transform.GetComponent<Renderer>().bounds.center;
+                            lr.SetPosition(0, startPos);
+                            character = hit.transform.gameObject;
+                            lr.useWorldSpace = true;
+                            dragging = true;
 
-
-                    endPos = camera.ScreenToWorldPoint(Input.mousePosition) + camOffset;
-
-
-                    lr.SetPosition(1, endPos);
-                }
-
-                if (Physics2D.CircleCast(endPos, characterRadius, Vector2.zero, 0))
-                {
-                    colliderBlock = true;
-                }
-                else
-                {
-                    colliderBlock = false;
-                }
-
-                if (Input.GetMouseButtonUp(0))
-                {
-
-                    dragging = false;
-
-                    if (!colliderBlock)
-                    {
-
-                        //lines.Add(newLine);
-                        charactersMoving.Add(character);
-                        Debug.Log(character);
-
-
+                            characterCall?.Invoke(character.GetComponent<CharacterScripts>());
+                        }
                     }
                     else
                     {
-                        lr.enabled = false;
+                        if(hit.collider != null)
+                        {
+                            target = hit.transform.gameObject;
+                        }
+                    }
+                    
+                }
+                if (dragging)
+                {
+                    if (Input.GetMouseButton(0))
+                    {
+                        if (colliderBlock)
+                        {
+                            //show red
+                        }
+
+                        endPos = camera.ScreenToWorldPoint(Input.mousePosition) + camOffset;
+
+                        lr.SetPosition(1, endPos);
                     }
 
+                    if (Physics2D.CircleCast(endPos, characterRadius, Vector2.zero, 0))
+                    {
+                        colliderBlock = true;
+                    }
+                    else
+                    {
+                        colliderBlock = false;
+                    }
+
+                    if (Input.GetMouseButtonUp(0))
+                    {
+
+                        dragging = false;
+
+                        if (!colliderBlock)
+                        {
+                            charactersMoving.Add(character);
+                        }
+                        else
+                        {
+                            lr.enabled = false;
+                        }
+
+                    }
                 }
             }
+            
+            
         }
         else
         {
-            //foreach(movingLines currentLines in lines)
-            //{
-            //    currentLines.character.transform.DOMove(currentLines.lr.GetPosition(1), 0.8f);
-            //    currentLines.lr.SetPosition(0, currentLines.character.GetComponent<Renderer>().bounds.center);
-
-            //    if(Vector2.Distance(currentLines.character.transform.position, currentLines.lr.GetPosition(1)) <= 0.5f)
-            //    {
-            //        Debug.Log("hi");
-            //        currentLines.lr.enabled = true;
-            //        currentLines.lr.enabled = false;
-            //    }
-            //}
 
             foreach(GameObject currentCharacter in charactersMoving)
             {
-                Debug.Log(currentCharacter);
                 LineRenderer tempLR = currentCharacter.GetComponent<LineRenderer>();
-                //currentCharacter.transform.DOMove(tempLR.GetPosition(1), 0.8f);
                 currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
-
-                //tempLR.enabled = true;
-                //tempLR.positionCount = 2;
-                //tempLR.useWorldSpace = true;
-                //tempLR.SetPosition(0, currentCharacter.GetComponent<Renderer>().bounds.center);
-
                 tempLR.enabled = false;
-                
-                
-                
-            }
 
-            //charactersMoving.Clear();
-            //lines.Clear();
+            }
             StartCoroutine(changePhase());
         }
     }

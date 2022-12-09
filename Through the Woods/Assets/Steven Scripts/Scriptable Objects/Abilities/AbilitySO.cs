@@ -18,10 +18,13 @@ public class AbilitySO : ScriptableObject
     public SkillType type;
 
     public int CD;
-    public bool active;
+    public bool active = false;
 
-    
+    public int damage;
 
+    public CharacterScripts character;
+
+    public float animationTime;
     public void Start()
     {
         
@@ -32,5 +35,15 @@ public class AbilitySO : ScriptableObject
     public virtual void Activate(CharacterScripts character)
     {
         
+    }
+
+    public virtual void UseSkill(CharacterScripts character)
+    {
+
+    }
+
+    public virtual void Deactivate(CharacterScripts character)
+    {
+
     }
 }

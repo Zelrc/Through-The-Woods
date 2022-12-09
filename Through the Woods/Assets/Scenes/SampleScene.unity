@@ -804,6 +804,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5193932884333829440, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193932884333829454, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193932884333829454, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: It can be customized
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193932884333829454, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: by anyone at anytime
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193932884333829454, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: by anyone at anytime
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193932884333829454, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: hdhbasd
+      objectReference: {fileID: 0}
     - target: {fileID: 5193932884453674483, guid: 8703e30b0f0e878449e300a09ec2eae4, type: 3}
       propertyPath: m_Name
       value: Canvas

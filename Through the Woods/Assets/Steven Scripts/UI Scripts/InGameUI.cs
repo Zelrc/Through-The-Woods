@@ -4,15 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using static DragLine;
 
+public enum selectedSkills
+{
+    NONE,
+    ONE,
+    TWO,
+    THREE
+}
 public class InGameUI : MonoBehaviour
 {
     [SerializeField] Button skill1;
     [SerializeField] Button skill2;
     [SerializeField] Button skill3;
 
+    [SerializeField] Button skillActivation;
+
     [SerializeField] Image portrait;
 
+    selectedSkills currentSkill = selectedSkills.NONE;
+
     public static CharacterScripts currentSelectedCharacter;
+
+    
+
 
     private void Awake()
     {
@@ -22,6 +36,9 @@ public class InGameUI : MonoBehaviour
         skill2.onClick.AddListener(SkillButton2Click);
         skill3.onClick.RemoveListener(SkillButton3Click);
         skill3.onClick.AddListener(SkillButton3Click);
+        skillActivation.onClick.RemoveListener(UseSkillsConfirmation);
+        skillActivation.onClick.AddListener(UseSkillsConfirmation);
+
     }
     // Start is called before the first frame update
     void Start()
@@ -49,25 +66,51 @@ public class InGameUI : MonoBehaviour
     {
         currentSelectedCharacter = character;
 
-        skill1.GetComponent<Image>().sprite = character.character.Skill1.skillSprite;
-        skill2.GetComponent<Image>().sprite = character.character.Skill2.skillSprite;
-        skill3.GetComponent<Image>().sprite = character.character.Skill3.skillSprite;
+        //skill1.GetComponent<Image>().sprite = character.character.Skill1.skillSprite;
+        //skill2.GetComponent<Image>().sprite = character.character.Skill2.skillSprite;
+        //skill3.GetComponent<Image>().sprite = character.character.Skill3.skillSprite;
 
-        portrait.sprite = character.character.portrait;
+        //portrait.sprite = character.character.portrait;
     }
 
     void SkillButton1Click()
     {
+        currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
+        currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
         currentSelectedCharacter.character.Skill1.Activate(currentSelectedCharacter);
+        
+        currentSkill = selectedSkills.ONE;
     }
 
     void SkillButton2Click()
     {
+        currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
+        currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
         currentSelectedCharacter.character.Skill2.Activate(currentSelectedCharacter);
+        currentSkill = selectedSkills.TWO;
     }
 
     void SkillButton3Click()
     {
+        currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
+        currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
         currentSelectedCharacter.character.Skill3.Activate(currentSelectedCharacter);
+        currentSkill = selectedSkills.THREE;
+    }
+
+    void UseSkillsConfirmation()
+    {
+        if(currentSkill == selectedSkills.ONE)
+        {
+            currentSelectedCharacter.character.Skill1.UseSkill(currentSelectedCharacter);
+        }
+        else if(currentSkill == selectedSkills.TWO)
+        {
+            currentSelectedCharacter.character.Skill2.UseSkill(currentSelectedCharacter);
+        }
+        else if(currentSkill == selectedSkills.THREE)
+        {
+            currentSelectedCharacter.character.Skill3.UseSkill(currentSelectedCharacter);
+        }
     }
 }

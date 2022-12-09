@@ -18,7 +18,9 @@ public class CharacterScripts : MonoBehaviour
 
     public GameObject AoECircle;
 
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
+
+    public bool parryBuff = false;
 
     SpriteRenderer image;
     // Start is called before the first frame update

@@ -8,20 +8,17 @@ public class EnemyScript : MonoBehaviour
 
     SpriteRenderer image;
 
+    public int health;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(After1Frame());
+        
         image = GetComponent<SpriteRenderer>();
-        image.sprite = enemy.art;
+        //image.sprite = enemy.art;
     }
 
-    IEnumerator After1Frame()
-    {
-        yield return null;
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
