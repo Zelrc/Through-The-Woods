@@ -40,8 +40,7 @@ public class DragLine : MonoBehaviour
 
         if(!ActionPhase)
         {
-            if(!choosingTarget)
-            {
+            
                 if (Input.GetMouseButtonDown(0))
                 {
                     if(!choosingTarget)
@@ -63,9 +62,11 @@ public class DragLine : MonoBehaviour
                     }
                     else
                     {
+                        Debug.LogError("choosing");
                         if(hit.collider != null)
                         {
                             target = hit.transform.gameObject;
+                            Debug.Log(target);
                         }
                     }
                     
@@ -109,7 +110,7 @@ public class DragLine : MonoBehaviour
 
                     }
                 }
-            }
+            
             
             
         }

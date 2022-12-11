@@ -14,6 +14,7 @@ public class MeleeController : MonoBehaviour
             {
                 
                 slamScript.character.agent.isStopped = true;
+                
                 slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().GetTargets();
                 
 
@@ -28,6 +29,7 @@ public class MeleeController : MonoBehaviour
                 //StartCoroutine(AnimationCour());
                 slamScript.active = false;
                 slamScript.character.AoECircle.SetActive(false);
+                slamScript.character.anim.SetTrigger("Attack");
             }
 
             
