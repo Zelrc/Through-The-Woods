@@ -6,6 +6,10 @@ public class MeleeController : MonoBehaviour
 {
     public MeleeSlam slamScript;
 
+    private void Start()
+    {
+        slamScript.active = false;
+    }
     void Update()
     {
         if(slamScript.active == true)
@@ -23,13 +27,14 @@ public class MeleeController : MonoBehaviour
                     if (enemy.GetComponent<EnemyScript>())
                     {
                         enemy.GetComponent<EnemyScript>().health -= slamScript.damage;
+                        enemy.GetComponent<EnemyScript>().GetHurt();
                     }
 
                 }
                 //StartCoroutine(AnimationCour());
                 slamScript.active = false;
                 slamScript.character.AoECircle.SetActive(false);
-                slamScript.character.anim.SetTrigger("Attack");
+                StartCoroutine(startAnimation());
             }
 
             
@@ -37,5 +42,9 @@ public class MeleeController : MonoBehaviour
         }
     }
 
-    
+    IEnumerator startAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        slamScript.character.anim.SetTrigger("Attack");
+    }
 }

@@ -12,6 +12,10 @@ public class TrackingBulletController : MonoBehaviour
 
     GameObject bullet;
     // Start is called before the first frame update
+    private void Start()
+    {
+        script.active = false;
+    }
 
     // Update is called once per frame
     void Update()

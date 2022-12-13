@@ -8,12 +8,12 @@ public class Parry : AbilitySO
     public override void Activate(CharacterScripts character)
     {
 
-        character.AoECircle.SetActive(true);
+        //character.AoECircle.SetActive(true);
     }
 
     public override void Deactivate(CharacterScripts character)
     {
-        character.AoECircle.SetActive(false);
+        //character.AoECircle.SetActive(false);
     }
 
 
@@ -22,8 +22,10 @@ public class Parry : AbilitySO
     {
         character = _character;
         active = true;
-        character.anim.SetTrigger("Jump");
+        //character.anim.SetTrigger("Jump");
         character.anim.SetInteger("Direction", 0);
+
+        //character.anim.SetTrigger("Parry");
     }
 
 }

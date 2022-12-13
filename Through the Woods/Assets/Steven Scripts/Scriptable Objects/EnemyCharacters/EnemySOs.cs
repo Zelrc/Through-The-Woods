@@ -15,10 +15,7 @@ public class EnemySOs : ScriptableObject
 
     public EnemyType type;
 
-    public int AP;
     public int health;
     public int attack;
-
-    public Animation anim;
     public Sprite art;
 }

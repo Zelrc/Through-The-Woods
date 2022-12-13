@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using static DragLine;
 
 public enum state
 {
@@ -14,13 +15,14 @@ public class CharacterScripts : MonoBehaviour
 {
     public PlayerSOs character;
 
-    int health;
+    public int health;
 
     public GameObject AoECircle;
 
     public NavMeshAgent agent;
 
     public bool parryBuff = false;
+    bool parryTurnOff = false;
 
     SpriteRenderer image;
 
@@ -35,11 +37,40 @@ public class CharacterScripts : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         anim = GetComponent<Animator>();
+
+        health = character.maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(parryBuff)
+        {
+            anim.SetBool("Parry", true);
+        }
+        else
+        {
+            anim.SetBool("Parry", false);
+        }
+
+        if(ActionPhase)
+        {
+            if(parryBuff)
+            {
+                parryTurnOff = true;
+            }
+            else
+            {
+                parryTurnOff = false;
+            }
+        }
+        else
+        {
+            if(parryTurnOff)
+            {
+                parryBuff = false;
+                anim.SetTrigger("Idle");
+            }
+        }
     }
 }

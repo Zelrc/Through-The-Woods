@@ -26,6 +26,8 @@ public class DragLine : MonoBehaviour
 
     Vector3 camOffset = new Vector3(0, 0, 10);
 
+    public GameObject selectUI;
+
     public static Action<CharacterScripts> characterCall;
     // Start is called before the first frame update
     void Start()
@@ -40,83 +42,85 @@ public class DragLine : MonoBehaviour
 
         if(!ActionPhase)
         {
-            
-                if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!choosingTarget)
                 {
-                    if(!choosingTarget)
+                    if (hit.collider != null && hit.transform.tag == "Character")
                     {
-                        if (hit.collider != null && hit.transform.tag == "Character")
-                        {
-                            lr = hit.transform.GetComponent<LineRenderer>();
+                        lr = hit.transform.GetComponent<LineRenderer>();
 
-                            lr.enabled = true;
-                            lr.positionCount = 2;
-                            startPos = hit.transform.GetComponent<Renderer>().bounds.center;
-                            lr.SetPosition(0, startPos);
-                            character = hit.transform.gameObject;
-                            lr.useWorldSpace = true;
-                            dragging = true;
+                        lr.enabled = true;
+                        lr.positionCount = 2;
+                        startPos = hit.transform.GetComponent<Renderer>().bounds.center;
+                        lr.SetPosition(0, startPos);
+                        character = hit.transform.gameObject;
+                        lr.useWorldSpace = true;
+                        dragging = true;
 
-                            characterCall?.Invoke(character.GetComponent<CharacterScripts>());
-                        }
+                        characterCall?.Invoke(character.GetComponent<CharacterScripts>());
+
+                        selectUI.SetActive(true);
+                        selectUI.transform.position = character.transform.position;
                     }
                     else
                     {
-                        Debug.LogError("choosing");
-                        if(hit.collider != null)
-                        {
-                            target = hit.transform.gameObject;
-                            Debug.Log(target);
-                        }
+                        selectUI.SetActive(false);
                     }
-                    
                 }
-                if (dragging)
+                else
                 {
-                    if (Input.GetMouseButton(0))
+                    if (hit.collider != null)
                     {
-                        if (colliderBlock)
-                        {
-                            //show red
-                        }
+                        target = hit.transform.gameObject;
+                        Debug.Log(target);
+                    }
+                }
 
-                        endPos = camera.ScreenToWorldPoint(Input.mousePosition) + camOffset;
-
-                        lr.SetPosition(1, endPos);
+            }
+            if (dragging)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    if (colliderBlock)
+                    {
+                        //show red
                     }
 
-                    if (Physics2D.CircleCast(endPos, characterRadius, Vector2.zero, 0))
+                    endPos = camera.ScreenToWorldPoint(Input.mousePosition) + camOffset;
+
+                    lr.SetPosition(1, endPos);
+                }
+
+                if (Physics2D.CircleCast(endPos, characterRadius, Vector2.zero, 0))
+                {
+                    colliderBlock = true;
+                }
+                else
+                {
+                    colliderBlock = false;
+                }
+
+                if (Input.GetMouseButtonUp(0))
+                {
+
+                    dragging = false;
+
+                    if (!colliderBlock)
                     {
-                        colliderBlock = true;
+                        charactersMoving.Add(character);
                     }
                     else
                     {
-                        colliderBlock = false;
+                        lr.enabled = false;
                     }
 
-                    if (Input.GetMouseButtonUp(0))
-                    {
-
-                        dragging = false;
-
-                        if (!colliderBlock)
-                        {
-                            charactersMoving.Add(character);
-                        }
-                        else
-                        {
-                            lr.enabled = false;
-                        }
-
-                    }
                 }
-            
-            
-            
+            }
         }
         else
         {
-
+            selectUI.SetActive(false);
             foreach(GameObject currentCharacter in charactersMoving)
             {
                 LineRenderer tempLR = currentCharacter.GetComponent<LineRenderer>();
@@ -130,7 +134,7 @@ public class DragLine : MonoBehaviour
 
     IEnumerator changePhase()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.0f);
         ActionPhase = false;
     }
 
