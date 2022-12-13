@@ -46,7 +46,16 @@ public class CharacterScripts : MonoBehaviour
     {
         if(parryBuff)
         {
-            anim.SetBool("Parry", true);
+            if(ActionPhase)
+            {
+                anim.SetBool("Parry", true);
+            }
+            else
+            {
+                anim.SetBool("Parry", false);
+            }
+           
+            
         }
         else
         {
@@ -68,9 +77,13 @@ public class CharacterScripts : MonoBehaviour
         {
             if(parryTurnOff)
             {
+                //character.Skill2.active = false; //need to change
+
                 parryBuff = false;
                 anim.SetTrigger("Idle");
             }
         }
+
+        
     }
 }

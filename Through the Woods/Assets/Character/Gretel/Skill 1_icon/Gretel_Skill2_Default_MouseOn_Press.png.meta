@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd5a4fdb60909bb4a9c5aef85819c39c
+guid: 16969436a0e55ff4385657ccf2779bd2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,31 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Feya_Skill2_Deafult_MousePlace_Activate-Sheet_0
+      name: Gretel_Skill2_Default_MouseOn_Press_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 33
-        height: 32
+        x: 15
+        y: 14
+        width: 36
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb0b89f6cfb2594b93816a5b7af79c9
-      internalID: 897877980
+      spriteID: 5ddcffba703ee7746a4012e3c58d535c
+      internalID: -1259076156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Feya_Skill2_Deafult_MousePlace_Activate-Sheet_1
+      name: Gretel_Skill2_Default_MouseOn_Press_1
       rect:
         serializedVersion: 2
         x: 78
         y: 14
-        width: 36
+        width: 37
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6c11dc8f097f4940b4b301a41690bb1
-      internalID: 810253188
+      spriteID: 022d9b5706a80c34aa02480e9966970e
+      internalID: -1283443461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Feya_Skill2_Deafult_MousePlace_Activate-Sheet_2
+      name: Gretel_Skill2_Default_MouseOn_Press_2
       rect:
         serializedVersion: 2
         x: 142
         y: 14
-        width: 36
+        width: 37
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d749933616b98149bf29c94d21beab8
-      internalID: 1610181801
+      spriteID: 233ea30b7a9c9394d9be640be3499853
+      internalID: -1689139334
       vertices: []
       indices: 
       edges: []
@@ -214,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Feya_Skill2_Deafult_MousePlace_Activate-Sheet_0: 897877980
-      Feya_Skill2_Deafult_MousePlace_Activate-Sheet_2: 1610181801
-      Feya_Skill2_Deafult_MousePlace_Activate-Sheet_1: 810253188
+      Gretel_Skill2_Default_MouseOn_Press_1: -1283443461
+      Gretel_Skill2_Default_MouseOn_Press_0: -1259076156
+      Gretel_Skill2_Default_MouseOn_Press_2: -1689139334
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

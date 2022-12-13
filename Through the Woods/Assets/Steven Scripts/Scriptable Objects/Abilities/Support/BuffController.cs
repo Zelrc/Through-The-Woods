@@ -16,10 +16,9 @@ public class BuffController : MonoBehaviour
     {
         if(parryScript.active)
         {
-            if(ActionPhase)
-            {
+            
                 this.GetComponent<CharacterScripts>().parryBuff = true;
-            }
+            
         }
     }
 }

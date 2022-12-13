@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static DragLine;
+using static InGameUI;
 using UnityEngine.AI;
 
 public enum enemyState
@@ -43,6 +44,7 @@ public class EnemyScript : MonoBehaviour
         agent.updateUpAxis = false;
         lr = GetComponent<LineRenderer>();
         anim = GetComponent<Animator>();
+        health = enemy.maxHealth;
         //image.sprite = enemy.art;
     }
 
@@ -55,15 +57,16 @@ public class EnemyScript : MonoBehaviour
         {
             if (detectionRangeCircle.GetComponent<DetectionRange>().detected)
             {
-                if (Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <= 2f)
+                if (Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <= 1.2f)
                 {
                     state = enemyState.ATTACK;
-                    anim.SetTrigger("PlanAttack");
-                    //plan to attack
+                    anim.SetBool("PlanAttack", true);
+                    anim.SetBool("PlanMove", false);
                 }
                 else
                 {
-                    anim.SetTrigger("PlanMove");
+                    anim.SetBool("PlanAttack", false);
+                    anim.SetBool("PlanMove", true);
                     state = enemyState.CHASE;
                     lr.enabled = true;
                     lr.positionCount = 2;
@@ -86,17 +89,25 @@ public class EnemyScript : MonoBehaviour
                 case enemyState.IDLE:
                     break;
                 case enemyState.ATTACK:
+                    anim.SetBool("PlanAttack", false);
                     anim.SetTrigger("Attack");
                     if(detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff == false)
                     {
                         detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health--;
+                        detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
                     }
+                    else
+                    {
+                        //health--;
+                        //GetHurt();
+                    }
+                    state = enemyState.IDLE;
                     break;
                 case enemyState.CHASE:
                     agent.SetDestination(targetPos);
                     lr.enabled = false;
-                    
-                    if(agent.remainingDistance <= agent.stoppingDistance && agent.velocity.sqrMagnitude == 0f)
+                    anim.SetBool("PlanMove", false);
+                    if (agent.remainingDistance <= agent.stoppingDistance && agent.velocity.sqrMagnitude == 0f)
                     {
                         anim.SetBool("Walk", false);
                     }
@@ -104,6 +115,7 @@ public class EnemyScript : MonoBehaviour
                     {
                         anim.SetBool("Walk", true);
                     }
+                    
                     break;
 
             }
@@ -120,13 +132,18 @@ public class EnemyScript : MonoBehaviour
 
     public void GetHurt()
     {
+        anim.SetBool("Walk", false);
         anim.SetTrigger("Hit");
+        
     }
 
     IEnumerator deathAnim()
     {
+        anim.SetBool("PlanMove", false);
+        anim.SetBool("PlanAttack", false);
         anim.SetTrigger("Dead");
         yield return new WaitForSeconds(2f);
+        killCount++;
         Destroy(this.gameObject);
     }
 

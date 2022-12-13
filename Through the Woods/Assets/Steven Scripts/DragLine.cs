@@ -128,20 +128,13 @@ public class DragLine : MonoBehaviour
                 tempLR.enabled = false;
 
             }
-            StartCoroutine(changePhase());
+            
         }
     }
 
-    IEnumerator changePhase()
-    {
-        yield return new WaitForSeconds(1.0f);
-        ActionPhase = false;
-    }
+    
 
-    public void OnActionStage()
-    {
-        ActionPhase = true;
-    }
+    
 
     //private void OnDrawGizmos()
     //{
