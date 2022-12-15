@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlanATT_R1
+  m_Name: PlanAtt_Front
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,18 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 774801120, guid: 32079aab02d74ff41a0f213db663aaa1, type: 3}
+      value: {fileID: 1332421738, guid: f123cb8b35f8b2847bcd9a88e09f32c0, type: 3}
     attribute: m_Sprite
     path: 
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 1670198239, guid: 9bba127875270e143b69ec728eaf93ca, type: 3}
+    - time: 0.016666668
+      value: {fileID: 1670198239, guid: 9bba127875270e143b69ec728eaf93ca, type: 3}
+    attribute: m_Sprite
+    path: PlanAtt_F1
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -39,14 +48,23 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2601984554
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 774801120, guid: 32079aab02d74ff41a0f213db663aaa1, type: 3}
+    - {fileID: 1332421738, guid: f123cb8b35f8b2847bcd9a88e09f32c0, type: 3}
+    - {fileID: 1670198239, guid: 9bba127875270e143b69ec728eaf93ca, type: 3}
+    - {fileID: 1670198239, guid: 9bba127875270e143b69ec728eaf93ca, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.033333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

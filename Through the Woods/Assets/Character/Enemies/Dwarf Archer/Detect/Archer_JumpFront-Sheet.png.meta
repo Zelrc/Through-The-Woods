@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8da476676d937654bbb82f6e381ecb17
+guid: bb8b74843f64a0a47a38f27aaa3f7919
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Archer_RightAttack-Sheet_0
+      name: Archer_JumpFront-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 723c04abb9a2e6249a686152441a0c12
-      internalID: -97700623
+      spriteID: 1ac6c29b2c0ed374587a2067eb8f0987
+      internalID: -13653040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_RightAttack-Sheet_1
+      name: Archer_JumpFront-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88dea36b95acdeb4aa36d137f1412617
-      internalID: 803044724
+      spriteID: c68a4ac1c3540244f8435640e73356ba
+      internalID: 265801085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_RightAttack-Sheet_2
+      name: Archer_JumpFront-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,8 +197,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e119d8d9a794046be51399138476ed
-      internalID: -1557388449
+      spriteID: c7eecd6af5922f24ba534ca17106f88d
+      internalID: -890481093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84f73f514ec34941bbb90852e2b93cf
+      internalID: 1330529607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809cc71f54ab0cf4e84d9791df9d1563
+      internalID: -1857804314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20184adbaaa3034b88de6876e9a8fdd
+      internalID: 1736526497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9cc52c6e1859744b7cb4acbf9c905a
+      internalID: 1685989144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58938f37776d8784ba70ce9ac6d02f4d
+      internalID: 1252293373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e009d486e16a2c4ba3d9bdefb6ec559
+      internalID: -838337582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpFront-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fa3370463f628408f1667e0095b3ce
+      internalID: -583059652
       vertices: []
       indices: 
       edges: []
@@ -214,9 +361,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Archer_RightAttack-Sheet_0: -97700623
-      Archer_RightAttack-Sheet_1: 803044724
-      Archer_RightAttack-Sheet_2: -1557388449
+      Archer_JumpFront-Sheet_5: 1736526497
+      Archer_JumpFront-Sheet_0: -13653040
+      Archer_JumpFront-Sheet_3: 1330529607
+      Archer_JumpFront-Sheet_8: -838337582
+      Archer_JumpFront-Sheet_9: -583059652
+      Archer_JumpFront-Sheet_4: -1857804314
+      Archer_JumpFront-Sheet_6: 1685989144
+      Archer_JumpFront-Sheet_7: 1252293373
+      Archer_JumpFront-Sheet_1: 265801085
+      Archer_JumpFront-Sheet_2: -890481093
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

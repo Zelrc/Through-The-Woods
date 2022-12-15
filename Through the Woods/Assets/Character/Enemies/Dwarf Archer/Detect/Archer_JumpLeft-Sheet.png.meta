@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8da476676d937654bbb82f6e381ecb17
+guid: f2cd5f4b1f2e9524ba83ef82cbb69ca7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Archer_RightAttack-Sheet_0
+      name: Archer_JumpLeft-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 723c04abb9a2e6249a686152441a0c12
-      internalID: -97700623
+      spriteID: 69acab4b8ccee0745b1321f3c8acf535
+      internalID: 162557155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_RightAttack-Sheet_1
+      name: Archer_JumpLeft-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88dea36b95acdeb4aa36d137f1412617
-      internalID: 803044724
+      spriteID: 02156fbd79454fc4e83574f3b4127832
+      internalID: 1117861066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_RightAttack-Sheet_2
+      name: Archer_JumpLeft-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,8 +197,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e119d8d9a794046be51399138476ed
-      internalID: -1557388449
+      spriteID: 2db456889604f0743a442f81d8e5887c
+      internalID: 510604153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpLeft-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59477f45c03cbdb47970c48bdf6b3e26
+      internalID: 1166219115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpLeft-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f37431969edfe4ba4aa1c1abf6c872
+      internalID: -1283399453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpLeft-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5f128c961273e4d8c838f0c030bb26
+      internalID: 1315452169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpLeft-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2b50c60f3a09843a4dd25680b62140
+      internalID: -1316208760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpLeft-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6f62cd55e9869438ea343895af788a
+      internalID: -1949254631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_JumpLeft-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a1cb82bd3df4c4fb52cfef60a2ce67
+      internalID: 1598200640
       vertices: []
       indices: 
       edges: []
@@ -214,9 +340,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Archer_RightAttack-Sheet_0: -97700623
-      Archer_RightAttack-Sheet_1: 803044724
-      Archer_RightAttack-Sheet_2: -1557388449
+      Archer_JumpLeft-Sheet_0: 162557155
+      Archer_JumpLeft-Sheet_7: -1949254631
+      Archer_JumpLeft-Sheet_3: 1166219115
+      Archer_JumpLeft-Sheet_1: 1117861066
+      Archer_JumpLeft-Sheet_5: 1315452169
+      Archer_JumpLeft-Sheet_4: -1283399453
+      Archer_JumpLeft-Sheet_6: -1316208760
+      Archer_JumpLeft-Sheet_2: 510604153
+      Archer_JumpLeft-Sheet_8: 1598200640
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
