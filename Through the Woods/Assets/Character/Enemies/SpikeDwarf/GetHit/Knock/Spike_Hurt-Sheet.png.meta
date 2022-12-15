@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0ec6d9e228a84045be476915b1bffeb
+guid: 452efecf032cf914198c52d8f8ffa49a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_0
+      name: Spike_Hurt-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a55f281259d0c4b86c47604a82b4f7
-      internalID: -1439145532
+      spriteID: a0ed86dc9db76bb44aca0a30c2ef4751
+      internalID: 193485523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_1
+      name: Spike_Hurt-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2f976119738db4eaa26ad4dc2ff4cc
+      internalID: 695123986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_Hurt-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +197,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f82aa6f1f22af394a993edacda1ca5c2
-      internalID: -1139222397
+      spriteID: b6cb402b395e7344ca69d8987f12a456
+      internalID: 222323863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_2
+      name: Spike_Hurt-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa107a6189dfada42abdffcb3b9d7b83
+      internalID: -1646349149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_Hurt-Sheet_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de37913153827fd4f9c6321f222bc3ff
-      internalID: -1566745515
+      spriteID: f2da9640eecf30e40a0bdfbd29c895c2
+      internalID: 1611305447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_3
+      name: Spike_Hurt-Sheet_5
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,113 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b743eb74b5744e241be7c99ea732f381
-      internalID: 399762971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 186c694b6a724d44abf7cff0c537f6aa
-      internalID: -1836990643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60eba4e283820ee4e8a80b824f6a78c2
-      internalID: 980724292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 744a694e1031c074e9d3e568bd13c90d
-      internalID: -1386125945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ecf8e6018ad391419f2f0679fd4452b
-      internalID: -1204895574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ded161d946ba9664781a60c56974120a
-      internalID: -327686368
+      spriteID: 852113666a674e245b0efbe2f172df9e
+      internalID: -1182346296
       vertices: []
       indices: 
       edges: []
@@ -340,15 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GetHit_Back-Sheet_6: -1386125945
-      GetHit_Back-Sheet_8: -327686368
-      GetHit_Back-Sheet_4: -1836990643
-      GetHit_Back-Sheet_5: 980724292
-      GetHit_Back-Sheet_7: -1204895574
-      GetHit_Back-Sheet_2: -1566745515
-      GetHit_Back-Sheet_0: -1439145532
-      GetHit_Back-Sheet_1: -1139222397
-      GetHit_Back-Sheet_3: 399762971
+      Spike_Hurt-Sheet_0: 193485523
+      Spike_Hurt-Sheet_1: 695123986
+      Spike_Hurt-Sheet_5: -1182346296
+      Spike_Hurt-Sheet_3: -1646349149
+      Spike_Hurt-Sheet_2: 222323863
+      Spike_Hurt-Sheet_4: 1611305447
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

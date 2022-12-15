@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0ec6d9e228a84045be476915b1bffeb
+guid: da6793e7be24e7f428cef4e9d0883ef3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_0
+      name: Spike_Frontt-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a55f281259d0c4b86c47604a82b4f7
-      internalID: -1439145532
+      spriteID: 9f7b7cfc590cb2640b2b9034659b8a74
+      internalID: 253283094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_1
+      name: Spike_Frontt-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f82aa6f1f22af394a993edacda1ca5c2
-      internalID: -1139222397
+      spriteID: ca1b75e5c5f831b47a13fb45ff621578
+      internalID: 291264612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_2
+      name: Spike_Frontt-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de37913153827fd4f9c6321f222bc3ff
-      internalID: -1566745515
+      spriteID: 17227d46157e2cd4aae08f0af809b688
+      internalID: -1527442863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GetHit_Back-Sheet_3
+      name: Spike_Frontt-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -218,113 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b743eb74b5744e241be7c99ea732f381
-      internalID: 399762971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 186c694b6a724d44abf7cff0c537f6aa
-      internalID: -1836990643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60eba4e283820ee4e8a80b824f6a78c2
-      internalID: 980724292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 744a694e1031c074e9d3e568bd13c90d
-      internalID: -1386125945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ecf8e6018ad391419f2f0679fd4452b
-      internalID: -1204895574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GetHit_Back-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ded161d946ba9664781a60c56974120a
-      internalID: -327686368
+      spriteID: 88ce8cd55439b2542906e0302d29ec65
+      internalID: -1723849139
       vertices: []
       indices: 
       edges: []
@@ -340,15 +235,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GetHit_Back-Sheet_6: -1386125945
-      GetHit_Back-Sheet_8: -327686368
-      GetHit_Back-Sheet_4: -1836990643
-      GetHit_Back-Sheet_5: 980724292
-      GetHit_Back-Sheet_7: -1204895574
-      GetHit_Back-Sheet_2: -1566745515
-      GetHit_Back-Sheet_0: -1439145532
-      GetHit_Back-Sheet_1: -1139222397
-      GetHit_Back-Sheet_3: 399762971
+      Spike_Frontt-Sheet_0: 253283094
+      Spike_Frontt-Sheet_1: 291264612
+      Spike_Frontt-Sheet_3: -1723849139
+      Spike_Frontt-Sheet_2: -1527442863
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
