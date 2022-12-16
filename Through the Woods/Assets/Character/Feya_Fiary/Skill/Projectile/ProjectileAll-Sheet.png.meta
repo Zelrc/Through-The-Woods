@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4630e535119a3814ab371e458088af45
+guid: b14cfd2fcc7aca645ab1175049602a6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aoe_Left-Sheet_0
+      name: ProjectileAll-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9c223d227524f94a961ff28701c12a2
-      internalID: -484715380
+      spriteID: d6494757d50ab394a8faeec5e425800d
+      internalID: 1573101880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Left-Sheet_1
+      name: ProjectileAll-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c257bb3a88389c74aab977494d1e728c
-      internalID: -533974046
+      spriteID: f408f5979278eb84f9c37cc2c4f48753
+      internalID: 268420565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Left-Sheet_2
+      name: ProjectileAll-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6d3e19bcc0456f45826527be12d53c7
-      internalID: 95019445
+      spriteID: 25af302019f3e004ca8959206b3d3e5a
+      internalID: -1743335423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Left-Sheet_3
+      name: ProjectileAll-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -218,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926da45fe39ae62449e4ca2252f035d2
-      internalID: 562931674
+      spriteID: d092874998aaee54e8bf72ce1acfb958
+      internalID: -1105273481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Left-Sheet_4
+      name: ProjectileAll-Sheet_4
       rect:
         serializedVersion: 2
         x: 512
@@ -239,8 +239,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7434a5c786d1984d8664b9bb5c29074
-      internalID: 566684603
+      spriteID: 6647dcc7096e36742b7824fe49f1b3f6
+      internalID: 2044602256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileAll-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ebb8ae58ea9f24c93ee4fe96496cd4
+      internalID: 1746393916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileAll-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db9dfa5b14cf51418ff0823bd28400e
+      internalID: -790209829
       vertices: []
       indices: 
       edges: []
@@ -256,11 +298,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Aoe_Left-Sheet_2: 95019445
-      Aoe_Left-Sheet_0: -484715380
-      Aoe_Left-Sheet_3: 562931674
-      Aoe_Left-Sheet_4: 566684603
-      Aoe_Left-Sheet_1: -533974046
+      ProjectileAll-Sheet_4: 2044602256
+      ProjectileAll-Sheet_2: -1743335423
+      ProjectileAll-Sheet_5: 1746393916
+      ProjectileAll-Sheet_3: -1105273481
+      ProjectileAll-Sheet_1: 268420565
+      ProjectileAll-Sheet_6: -790209829
+      ProjectileAll-Sheet_0: 1573101880
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

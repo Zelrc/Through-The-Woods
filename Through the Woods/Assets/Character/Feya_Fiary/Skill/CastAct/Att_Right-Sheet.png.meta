@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99b5e544b7088b44b8ad0db275e3d07d
+guid: 0ffd28dca8673c543a424db36a825bcf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aoe_Right-Sheet_0
+      name: Att_Right-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5720a9f3f3c710949a3db7d7c96d1eae
-      internalID: -1646040625
+      spriteID: 682b0055cd06abe4891b973cb07dab56
+      internalID: 1519778497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Right-Sheet_1
+      name: Att_Right-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985dd7db188a0c74f97cc253133c747b
-      internalID: 1128847886
+      spriteID: 1ee7be496e2ec3b45a45f547d2192175
+      internalID: -905856625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Right-Sheet_2
+      name: Att_Right-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1507b527c36af2145850551d5cafb810
-      internalID: -969007667
+      spriteID: fbb0d85785260934ba11f3eed8e4625d
+      internalID: -1055233287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Right-Sheet_3
+      name: Att_Right-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -218,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3638ee759eef50c44bc29072ae3cba76
-      internalID: -1068776624
+      spriteID: 34a835117d514c944a78ae3e04c3a2a4
+      internalID: 1761909124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aoe_Right-Sheet_4
+      name: Att_Right-Sheet_4
       rect:
         serializedVersion: 2
         x: 512
@@ -239,8 +239,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76833c68f5ed78d448ce51b2e0ecbc7a
-      internalID: -1302846242
+      spriteID: e2b44dda133a64546ad033498dfb4d33
+      internalID: 2033277473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Right-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a839ed460b46c42bc5011d8af94f91
+      internalID: 203439947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Right-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567edb3d91e09ab4a88931ae4dcd4820
+      internalID: 1759767422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Right-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e47940e6432814bab9d852c7d8b895
+      internalID: 66591121
       vertices: []
       indices: 
       edges: []
@@ -256,11 +319,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Aoe_Right-Sheet_2: -969007667
-      Aoe_Right-Sheet_0: -1646040625
-      Aoe_Right-Sheet_3: -1068776624
-      Aoe_Right-Sheet_4: -1302846242
-      Aoe_Right-Sheet_1: 1128847886
+      Att_Right-Sheet_2: -1055233287
+      Att_Right-Sheet_7: 66591121
+      Att_Right-Sheet_1: -905856625
+      Att_Right-Sheet_3: 1761909124
+      Att_Right-Sheet_4: 2033277473
+      Att_Right-Sheet_5: 203439947
+      Att_Right-Sheet_6: 1759767422
+      Att_Right-Sheet_0: 1519778497
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

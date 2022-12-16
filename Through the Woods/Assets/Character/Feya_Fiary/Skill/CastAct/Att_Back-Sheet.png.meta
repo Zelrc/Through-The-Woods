@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9717a3a768d3e0c49a0f0a91bf976b67
+guid: 13d4113af7162294d972b40d4ad3e60c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ATT2_Left_0
+      name: Att_Back-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e99c5364f9fa9e94cae375d6d77b15f5
-      internalID: -18739672
+      spriteID: 22868836326330341be59fdf05e2285e
+      internalID: -317646540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATT2_Left_1
+      name: Att_Back-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5486403483ef49548a3dc79a0caf1ed6
-      internalID: -1491804887
+      spriteID: 5fd2cedcf78ae3c4e8a29aceb5cf2f90
+      internalID: 1635556099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATT2_Left_2
+      name: Att_Back-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc981e2bd684354a85a501f0d1b3f55
-      internalID: -663159926
+      spriteID: 275a9060c2b6b4d41906e3751aabc6ea
+      internalID: 1696916754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATT2_Left_3
+      name: Att_Back-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -218,8 +218,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8fed29616a43544abcbd7f256757013
-      internalID: -2056289051
+      spriteID: 3a3a9b2923c20c543a4267979ce74e0e
+      internalID: 389418979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Back-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d7b402623e1754490f913887ab0982
+      internalID: -1918966276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Back-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74e8e939e70807489c206e6193bc95a
+      internalID: -1613916205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Back-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5de387f658facf43833d2fce0427596
+      internalID: -1739538898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att_Back-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875c8ec6bd971854dbc3950475752f4b
+      internalID: -1225187003
       vertices: []
       indices: 
       edges: []
@@ -235,10 +319,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ATT2_Left_3: -2056289051
-      ATT2_Left_2: -663159926
-      ATT2_Left_1: -1491804887
-      ATT2_Left_0: -18739672
+      Att_Back-Sheet_5: -1613916205
+      Att_Back-Sheet_3: 389418979
+      Att_Back-Sheet_1: 1635556099
+      Att_Back-Sheet_0: -317646540
+      Att_Back-Sheet_7: -1225187003
+      Att_Back-Sheet_4: -1918966276
+      Att_Back-Sheet_2: 1696916754
+      Att_Back-Sheet_6: -1739538898
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
