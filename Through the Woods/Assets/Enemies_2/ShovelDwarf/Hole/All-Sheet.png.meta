@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f63de0f7abf9d1043a7f109484ceb5dd
+guid: b5336d240dbeacb41aad37cb5f12ad7c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_0
+      name: All-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 652fe6ec7bb493b4e91f4d203910abf3
-      internalID: -379111588
+      spriteID: bb1aed9bfb1f4e14b81e31903239549a
+      internalID: 807720684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_1
+      name: All-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221988b3afbec3845a62b461d91fccec
+      internalID: 733645756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
-        width: 64
-        height: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ab128f0309ae724db74560c7366f461
-      internalID: -948342577
+      spriteID: c2d625adfa06f1749bdee72b96012fd2
+      internalID: -261925473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_2
+      name: All-Sheet_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f294cc3fd64fb1b40b25a39fe088cad6
-      internalID: 14089920
+      spriteID: ee41dbf38e781624d815920d8e6e914f
+      internalID: 341235975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_3
+      name: All-Sheet_4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926c4934154c0b0448523d594f3c0f9a
-      internalID: 1858042180
+      spriteID: 5720fe130784f544d8a6caf31cecb5d9
+      internalID: -591499071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_4
+      name: All-Sheet_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,29 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6662022f08a28154d89c497fcef5b5a2
-      internalID: -382285581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_Hurt-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 341de42c4e48079489cc509d85973c34
-      internalID: 2081616107
+      spriteID: 10e49fd4875d12b4eabd9353d24e2f66
+      internalID: -498971266
       vertices: []
       indices: 
       edges: []
@@ -277,12 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spike_Hurt-Sheet_0: -379111588
-      Spike_Hurt-Sheet_1: -948342577
-      Spike_Hurt-Sheet_5: 2081616107
-      Spike_Hurt-Sheet_3: 1858042180
-      Spike_Hurt-Sheet_2: 14089920
-      Spike_Hurt-Sheet_4: -382285581
+      All-Sheet_0: 807720684
+      All-Sheet_5: -498971266
+      All-Sheet_1: 733645756
+      All-Sheet_2: -261925473
+      All-Sheet_4: -591499071
+      All-Sheet_3: 341235975
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

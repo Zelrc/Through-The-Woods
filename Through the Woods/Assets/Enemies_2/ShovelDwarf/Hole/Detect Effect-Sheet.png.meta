@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f63de0f7abf9d1043a7f109484ceb5dd
+guid: 3965b82d466decd46b7989142d8db9fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_0
+      name: Detect Effect-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,41 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 652fe6ec7bb493b4e91f4d203910abf3
-      internalID: -379111588
+      spriteID: a12338af8f2a4be4588a6d653e243b86
+      internalID: 1589341592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ab128f0309ae724db74560c7366f461
-      internalID: -948342577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_Hurt-Sheet_2
+      name: Detect Effect-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,41 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f294cc3fd64fb1b40b25a39fe088cad6
-      internalID: 14089920
+      spriteID: 21f182a3e01757543a083a82c3acdda9
+      internalID: -926207113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_Hurt-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 926c4934154c0b0448523d594f3c0f9a
-      internalID: 1858042180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_Hurt-Sheet_4
+      name: Detect Effect-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,29 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6662022f08a28154d89c497fcef5b5a2
-      internalID: -382285581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_Hurt-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 341de42c4e48079489cc509d85973c34
-      internalID: 2081616107
+      spriteID: b24dff4fae4ff0b4689898ee57fef4b6
+      internalID: 49754670
       vertices: []
       indices: 
       edges: []
@@ -277,12 +214,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spike_Hurt-Sheet_0: -379111588
-      Spike_Hurt-Sheet_1: -948342577
-      Spike_Hurt-Sheet_5: 2081616107
-      Spike_Hurt-Sheet_3: 1858042180
-      Spike_Hurt-Sheet_2: 14089920
-      Spike_Hurt-Sheet_4: -382285581
+      Detect Effect-Sheet_0: 1589341592
+      Detect Effect-Sheet_1: -926207113
+      Detect Effect-Sheet_2: 49754670
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
