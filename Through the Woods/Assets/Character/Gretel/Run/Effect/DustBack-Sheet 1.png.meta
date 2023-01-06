@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41f59fd00f9e9be4d82da4faeff782fb
+guid: 0fad14e7951229c4fb752caa21b06517
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DustBack-Sheet_0
+      name: DustBack-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 8
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,41 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab6c773c056e5e5489d5b738c219a00e
-      internalID: 194138262
+      spriteID: b3429f584c6efd447a2714ca1a8426bb
+      internalID: -493382439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DustBack-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 559bb23d6e6023d4a961de16eb377f60
-      internalID: -1910509917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DustBack-Sheet_2
+      name: DustBack-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
-        width: 64
-        height: 64
+        y: 8
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e7add4e13bd38a45aeffbed76addda0
-      internalID: 406320412
+      spriteID: 6266815ab7347184a812b58dddb073d3
+      internalID: 1574744194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DustBack-Sheet_3
+      name: DustBack-Sheet 1_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 256
+        y: 8
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +197,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e59bce5541e9114a97125a78bce1669
-      internalID: -1800500654
+      spriteID: 62613ae313e9d7e43ac371c5ea1bda0d
+      internalID: -446857954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DustBack-Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 8
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb57dd63e5b1a042b39b0dce00cb201
+      internalID: -881145558
       vertices: []
       indices: 
       edges: []
@@ -235,10 +235,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DustBack-Sheet_0: 194138262
-      DustBack-Sheet_1: -1910509917
-      DustBack-Sheet_3: -1800500654
-      DustBack-Sheet_2: 406320412
+      DustBack-Sheet 1_1: 1574744194
+      DustBack-Sheet 1_0: -493382439
+      DustBack-Sheet 1_2: -446857954
+      DustBack-Sheet 1_3: -881145558
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
