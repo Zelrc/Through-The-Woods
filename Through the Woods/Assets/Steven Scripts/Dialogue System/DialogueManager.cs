@@ -44,7 +44,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void EndDialogue()
     {
-
+        nameText.transform.parent.gameObject.SetActive(false);
     }
 
     IEnumerator TypingAnim (string sentence)

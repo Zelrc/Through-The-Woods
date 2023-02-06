@@ -31,7 +31,7 @@ public class MeleeController : MonoBehaviour
 
                     if(slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies != null)
                     {
-                        if(slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies.Length != 1)
+                        if (slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies.Length != 1)
                         {
                             foreach (Collider2D enemy in slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies)
                             {
@@ -56,9 +56,9 @@ public class MeleeController : MonoBehaviour
                         }
                         else
                         {
-                            slamScript.character.AoECircle.SetActive(false);
+                        slamScript.character.AoECircle.SetActive(false);
                         }
-                        
+
                     }
                     else
                     {

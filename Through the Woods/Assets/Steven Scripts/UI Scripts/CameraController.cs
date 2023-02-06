@@ -39,7 +39,10 @@ public class CameraController : MonoBehaviour
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
             MC.GetComponent<NavMeshAgent>().SetDestination(characterPoint3.position);
-            MC.GetComponent<CharacterScripts>().health++;
+            if (MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
+            {
+                MC.GetComponent<CharacterScripts>().health++;
+            }
             stage3 = true;
         }
         else if(killCount >= enemyThreshold1 && !stage2)
@@ -48,7 +51,10 @@ public class CameraController : MonoBehaviour
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
             MC.GetComponent<NavMeshAgent>().SetDestination(characterPoint2.position);
-            MC.GetComponent<CharacterScripts>().health++;
+            if(MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
+            {
+                MC.GetComponent<CharacterScripts>().health++;
+            }
             stage2 = true;
         }
     }

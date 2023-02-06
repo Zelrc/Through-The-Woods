@@ -6,6 +6,8 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    //public GameObject dialogueScreen;
+
     public void Start()
     {
         DialogueManager.Instance.StartDialogue(dialogue);
@@ -14,5 +16,10 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerNext()
     {
         DialogueManager.Instance.DisplayNextSentence();
+    }
+
+    public void EndDialogue()
+    {
+        //dialogueScreen.SetActive(false);
     }
 }
