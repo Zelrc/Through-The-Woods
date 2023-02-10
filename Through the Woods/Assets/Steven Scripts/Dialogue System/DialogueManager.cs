@@ -8,22 +8,25 @@ using TMPro;
 public class DialogueManager : Singleton<DialogueManager>
 {
     Queue<string> sentences = new Queue<string>();
+    Queue<string> names = new Queue<string>();
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
     public void StartDialogue(Dialogue dialogue)
     {
-        nameText.text = dialogue.name;
-        sentences.Clear();
+        
+        //sentences.Clear();
 
         foreach(string sentence in dialogue.sentences)
         {
+            names.Enqueue(dialogue.name);
+            
             sentences.Enqueue(sentence);
-            Debug.Log(sentence);
+            //Debug.Log(sentence);
         }
 
-        DisplayNextSentence();
+        //DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -35,11 +38,12 @@ public class DialogueManager : Singleton<DialogueManager>
         }
 
         
+        string name = names.Dequeue();
         string sentence = sentences.Dequeue();
         Debug.Log(sentence);
 
         StopAllCoroutines();
-        StartCoroutine(TypingAnim(sentence));
+        StartCoroutine(TypingAnim(sentence, name));
     }
 
     void EndDialogue()
@@ -47,8 +51,10 @@ public class DialogueManager : Singleton<DialogueManager>
         nameText.transform.parent.gameObject.SetActive(false);
     }
 
-    IEnumerator TypingAnim (string sentence)
+    IEnumerator TypingAnim (string sentence, string name)
     {
+        nameText.text = name;
+
         dialogueText.text = "";
 
         foreach(char letter in sentence.ToCharArray())

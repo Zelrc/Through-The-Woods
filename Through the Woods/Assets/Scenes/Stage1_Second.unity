@@ -364,11 +364,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Feya
+  - name: a
     sentences:
-    - Hi, my name is Feya.
-    - I'm your Fairy Godmother.
-    - I'm here to help.
+    - Hi
+    - Yo
+  - name: b
+    sentences:
+    - LMAO
+    - Chill
 --- !u!114 &26489307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44814,7 +44817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7519750145271438187, guid: dbbb389ea4ad9b74cbc0742446e298a6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7519750145271438188, guid: dbbb389ea4ad9b74cbc0742446e298a6, type: 3}
       propertyPath: VIP
