@@ -544,73 +544,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - name: Piglet A & B
+  - name: Dwarf A
     sentences:
-    - Thank for the help, kind strangers!
-  - name: Bork
+    - Get them!
+  - name: Dwarf B
     sentences:
-    - I'm Bork. And this is my little brother, Bagon.
-    - We're both carpenters.
-  - name: Bagon
+    - 'Corner them from the right. '
+  - name: Dwarf C
     sentences:
-    - Thank... Kind strangers.
+    - Now they have no way to escape!
+  - name: Dwarf D
+    sentences:
+    - Remember to keep the piglets alive for the master!
+  - name: Piglet A
+    sentences:
+    - I told you, brother, we should not be wandering too far away from home.
+  - name: Piglet B
+    sentences:
+    - 'I know, I know. '
+    - "But I just wanted to harvest my big sister\u2019s favorite flower before her
+      birthday."
+    - Whom know it would only grow around the muddy area?
+    - One thing I know...
+    - That we are doomed for sure.
+  - name: Piglet B
+    sentences:
+    - 'I know, I know. '
+    - "But I just wanted to harvest my big sister\u2019s favorite flower before her
+      birthday."
+    - Whom know it would only grow around the muddy area?
   - name: Feya
     sentences:
-    - "I\u2019m Feya, a Fairy Godmother and she is Gretel. My Companion."
+    - Look like they are in trouble!
+    - We should help them!
   - name: Gretel
     sentences:
-    - "Hi\u2026"
+    - I don't know about that...
+    - Maybe we should observe more before we act.
+  - name: Feya
+    sentences:
+    - Their lives is in danger, Gretel!
   - name: Gretel
     sentences:
-    - "Hi\u2026"
-  - name: Bork
-    sentences:
-    - That a odd party.
-    - 'What your business for coming around here?  '
+    - "I mean\u2026 It is so risky to put our life upon saving others we do not know."
+    - "What if it is a trick set up by the Piglets and the Dwarfs to lure other people
+      in\u2026"
   - name: Feya
     sentences:
-    - ' We were trying to find a family who is great at constructing that living
-      in this forest to fix the bridge in order to help us crossover to the Gloomy
-      Grove. '
-    - Do you happen to know where they living?
-  - name: Bork
-    sentences:
-    - " I can\u2019t be sure that there is any person other people living here capable
-      of constructing. "
-    - 'But I do know that our Big Sis have some skills in doing it. '
-  - name: Bagon
-    sentences:
-    - Yeah, Big Sis is the best when it come to constructing.
-    - 'Big Sister is cool. '
-    - ' Although we might have some experiences, it is incomparable compared to Big
-      Sister. '
-  - name: Feya
-    sentences:
-    - Look like the relationship between your Big Sister are great.
-  - name: Bork
-    sentences:
-    - Yeah, that why we were here trying to find the flower for her birthday gift.
-    - Anyways, It getting late here.
-    - Why not you guys stay around at our place for a day and discuss the bridge
-      issue?
-  - name: Feya
-    sentences:
-    - 'Sure, we appreciate it. '
-    - Right, Gretel?
+    - 'What if they are the people we are finding to fix the bridge? '
+    - "Whether is a trick or not, we can\u2019t just ignore it when someone needs
+      help."
   - name: Gretel
     sentences:
-    - Wouldn't it be troublesome for you guys?
-  - name: Bork
+    - 'But... '
+  - name: Feya
     sentences:
-    - "It\u2019s fine. We rarely get any visitors to our place. "
-    - We are more than happy to have someone coming to our house. Is that right,
-      Bagon?
-  - name: Bagon
+    - If you not going then I going on my own!
+  - name: Gretel
     sentences:
-    - "Ye\u2026 Yes! "
-  - name: Bagon
-    sentences:
-    - 'Let go! '
+    - Sigh... Maybe we could ask them about the person fixing the bridge if we lucky.
 --- !u!114 &352412027
 MonoBehaviour:
   m_ObjectHideFlags: 0
