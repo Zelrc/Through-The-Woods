@@ -7415,8 +7415,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436589112}
   m_LocalRotation: {x: -0, y: -0, z: -0.023563936, w: 0.9997224}
-  m_LocalPosition: {x: 5.08, y: -4.05, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 4.81, y: -3.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8556,7 +8556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634856251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.36, y: 23.36, z: 0}
+  m_LocalPosition: {x: -11.6, y: 23.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42442,8 +42442,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804572108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.47, y: 18.24, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -4.75, y: 19.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45345,18 +45345,19 @@ MonoBehaviour:
   dialogue:
   - name: Young Girl
     sentences:
-    - ' How am I going to get through this...?'
+    - "Th\u2026That is too many of them."
+    - ' It will be firm to get through the dwarfs by battle.'
+    - How am I going to get through this.?
   - name: ???
     sentences:
-    - 'Hey, Listen You will definitely get through this. '
-    - 'It might seem to be crowded by enemies, but there are some weak defense spots
-      that you can break through. '
+    - It seems like this is a bit troublesome
+    - It is crowded by enemies, but there are some weak spots that you can sneak
+      through.
     - 'As long as we stay out of their sight, they will not be caught on you. '
     - 'You have my promise. '
   - name: Young Girl
     sentences:
-    - '... '
-    - (I should try listen to it advice and avoid the dwarf for now)
+    - Here goes nothing I guess...
 --- !u!114 &1414436007
 MonoBehaviour:
   m_ObjectHideFlags: 0
