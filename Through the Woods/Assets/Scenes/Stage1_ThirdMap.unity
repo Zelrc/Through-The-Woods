@@ -9336,7 +9336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1313400877
 Transform:
   m_ObjectHideFlags: 0
@@ -9411,44 +9411,55 @@ MonoBehaviour:
   - name: ???
     sentences:
     - It seems like we reach their main camp.
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - Should I try to sneak away again?
+    triggerNext: 0
   - name: ???
     sentences:
     - 'It futile.You will easily get noticed. Fighting them is inevitable. '
     - ' Fighting them is inevitable. '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - "But I never fought such a large number before\u2026 Is it even possible\u2026."
+    triggerNext: 0
   - name: ???
     sentences:
     - 'Don''t you worry, I will be supporting you as always. '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - But How? Your verbal advice can't break through the situation that I facing
       right now...
+    triggerNext: 0
   - name: ???
     sentences:
     - 'You''re Right! and that why... '
     - 'I will be fighting sight by sight with you. '
+    triggerNext: 0
   - name: Feya
     sentences:
     - TA~ DA~
     - 'I''m Feya. The fairy who has been talking inside your head. '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - 'A fairy? But how can a fairy fight? '
+    triggerNext: 0
   - name: Feya
     sentences:
     - "Fu~Fu~Fu~Although I can\u2019t deal much damage in the fight."
     - 'However, I possess great supporting skills that will keep you fighting without
       collapsing too soon. '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - Why are you helping me though?
     - I'm... just a stranger you just met.
     - 'And... now you even reveal yourself to help me. '
+    triggerNext: 0
   - name: ???
     sentences:
     - Hmmmmmm..... Why huh?
@@ -9456,11 +9467,13 @@ MonoBehaviour:
     - I just thought you look trouble.
     - Plus, I just have a feeling that we might have met before.
     - Is it that enough~?
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - ...
     - Fine, I'll be in your care.
     - But after this battle, we will part away.
+    triggerNext: 0
 --- !u!114 &1340021787
 MonoBehaviour:
   m_ObjectHideFlags: 0

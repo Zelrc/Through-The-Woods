@@ -9,9 +9,11 @@ public class DialogueManager : Singleton<DialogueManager>
 {
     Queue<string> sentences = new Queue<string>();
     Queue<string> names = new Queue<string>();
+    Queue<bool> cgTrigger = new Queue<bool>();
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+    public VideoSystem video;
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -23,9 +25,10 @@ public class DialogueManager : Singleton<DialogueManager>
             names.Enqueue(dialogue.name);
             
             sentences.Enqueue(sentence);
-            //Debug.Log(sentence);
-        }
 
+            
+        }
+        cgTrigger.Enqueue(dialogue.triggerNext);
         //DisplayNextSentence();
     }
 
@@ -40,10 +43,10 @@ public class DialogueManager : Singleton<DialogueManager>
         
         string name = names.Dequeue();
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        bool CG = cgTrigger.Dequeue();
 
         StopAllCoroutines();
-        StartCoroutine(TypingAnim(sentence, name));
+        StartCoroutine(TypingAnim(sentence, name, CG));
     }
 
     void EndDialogue()
@@ -51,8 +54,14 @@ public class DialogueManager : Singleton<DialogueManager>
         nameText.transform.parent.gameObject.SetActive(false);
     }
 
-    IEnumerator TypingAnim (string sentence, string name)
+    IEnumerator TypingAnim (string sentence, string name, bool CG)
     {
+        if(CG == true)
+        {
+            //need to switch and play mp4
+            video.PlayNextCG();
+        }
+
         nameText.text = name;
 
         dialogueText.text = "";
@@ -61,6 +70,8 @@ public class DialogueManager : Singleton<DialogueManager>
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.01f);
+
+            
         }
     }
     

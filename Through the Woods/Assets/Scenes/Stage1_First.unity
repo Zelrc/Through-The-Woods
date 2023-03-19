@@ -27990,6 +27990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6653014934402658093, guid: 3fcb2cdd2b474f74495697da5851feba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6653014934402658095, guid: 3fcb2cdd2b474f74495697da5851feba, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -30675,61 +30679,78 @@ MonoBehaviour:
   - name: Dwarf A
     sentences:
     - Damn it, where did she go.
+    triggerNext: 0
   - name: Dwarf B
     sentences:
     - 'She must be near. I could sense it. '
+    triggerNext: 0
   - name: Dwarf A
     sentences:
     - If we could capture her, we will be rewarded highly by our Master.
+    triggerNext: 0
   - name: Dwarf B
     sentences:
     - Quit your daydream and focus on the task.
     - You will be standing guard here. I will be reporting this event to our leader.
+    triggerNext: 0
   - name: Dwarf A
     sentences:
     - 'Yeah, Yeah. '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - "Seem like one of them gone now\u2026 "
     - But still, how was I going to get into the Nettle forest without getting caught
       by the dwarfs
     - "I need to deliver the package to grandma or else I will\u2026."
+    triggerNext: 0
   - name: ???
     sentences:
     - "You\u2019re USELESS!!!"
     - I should've let you die out in the forest.
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - AHHHHHH!
+    triggerNext: 0
   - name: Dwarf A
     sentences:
     - 'Found You~ My little '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - "Shit...Thing can\u2019t end like this.."
+    triggerNext: 0
   - name: ???
     sentences:
     - Seem like you are in trouble
+    triggerNext: 0
   - name: ???
     sentences:
     - Seem like you are in trouble
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - Who are you? Where are you talking to me?
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - Who are you? Where are you talking to me?
+    triggerNext: 0
   - name: ???
     sentences:
     - Do not worry fellow stranger, I will explain it later.
     - "For now, let\u2019s focus on the situation. I will teach you how to defeat
       enemies. "
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - "How can I trust you\u2026"
+    triggerNext: 0
   - name: ???
     sentences:
     - Just follow my instruction and you will be fine.
+    triggerNext: 0
 --- !u!114 &890520277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38933,7 +38954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1644876965
 Transform:
   m_ObjectHideFlags: 0
@@ -40968,6 +40989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike Dwarf_Idle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1398353971901414290, guid: 3b84b2fbe334d6d409af286ddfa176e4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 816e065093b90324785713e8ea853e9d, type: 2}
     - target: {fileID: 1829926412017149225, guid: 3b84b2fbe334d6d409af286ddfa176e4, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -42974,7 +42999,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &3038510174688032016
@@ -43127,7 +43152,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &3038510175148182931
@@ -43194,7 +43219,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &3038510175160519878
@@ -43851,7 +43876,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &3038510175813574495

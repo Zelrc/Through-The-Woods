@@ -33,7 +33,7 @@ public class EnemyScript : MonoBehaviour
 
     Coroutine deathCour;
 
-    
+    float detectionRange;
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +46,16 @@ public class EnemyScript : MonoBehaviour
         anim = GetComponent<Animator>();
         health = enemy.maxHealth;
         //image.sprite = enemy.art;
+
+        if(enemy.type == EnemyType.Melee)
+        {
+            detectionRange = 1.2f;
+        }
+        else if(enemy.type == EnemyType.Ranged)
+        {
+            detectionRange = 3.0f;
+        }
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -57,7 +64,11 @@ public class EnemyScript : MonoBehaviour
         {
             if (detectionRangeCircle.GetComponent<DetectionRange>().detected)
             {
-                if (Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <= 1.2f)
+                if(Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) < 0.6f)
+                {
+
+                }
+                if (Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <= detectionRange)
                 {
                     state = enemyState.ATTACK;
                     anim.SetBool("PlanAttack", true);
@@ -98,8 +109,8 @@ public class EnemyScript : MonoBehaviour
                     }
                     else
                     {
-                        //health--;
-                        //GetHurt();
+                        health--;
+                        GetHurt();
                     }
                     state = enemyState.IDLE;
                     break;

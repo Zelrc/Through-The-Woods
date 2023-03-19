@@ -368,10 +368,12 @@ MonoBehaviour:
     sentences:
     - Hi
     - Yo
+    triggerNext: 0
   - name: b
     sentences:
     - LMAO
     - Chill
+    triggerNext: 0
 --- !u!114 &26489307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7502,6 +7504,10 @@ PrefabInstance:
     - target: {fileID: 6653014934402658093, guid: 3fcb2cdd2b474f74495697da5851feba, type: 3}
       propertyPath: m_Name
       value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653014934402658093, guid: 3fcb2cdd2b474f74495697da5851feba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6653014934402658095, guid: 3fcb2cdd2b474f74495697da5851feba, type: 3}
       propertyPath: m_RootOrder
@@ -43839,7 +43845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1070203605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44652,6 +44658,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1828485147012994231, guid: dbbb389ea4ad9b74cbc0742446e298a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7519750145271438185, guid: dbbb389ea4ad9b74cbc0742446e298a6, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -45023,7 +45033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1376619007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45348,6 +45358,7 @@ MonoBehaviour:
     - "Th\u2026That is too many of them."
     - ' It will be firm to get through the dwarfs by battle.'
     - How am I going to get through this.?
+    triggerNext: 0
   - name: ???
     sentences:
     - It seems like this is a bit troublesome
@@ -45355,9 +45366,11 @@ MonoBehaviour:
       through.
     - 'As long as we stay out of their sight, they will not be caught on you. '
     - 'You have my promise. '
+    triggerNext: 0
   - name: Young Girl
     sentences:
     - Here goes nothing I guess...
+    triggerNext: 0
 --- !u!114 &1414436007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73293,7 +73306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1850921794
 Transform:
   m_ObjectHideFlags: 0
