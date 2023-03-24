@@ -31195,7 +31195,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.13999999, y: 0.13999999, z: 0}
+  m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -32547,7 +32547,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 7
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.13999999, y: 0.13999999, z: 0}
+  m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -41206,7 +41206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1828485147012994231, guid: dbbb389ea4ad9b74cbc0742446e298a6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1828485147690813356, guid: dbbb389ea4ad9b74cbc0742446e298a6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -43159,7 +43159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3038510175369310896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -28.93, z: 0}
+  m_LocalPosition: {x: -0.04, y: -28.92, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43231,7 +43231,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 1426973441, guid: fd85e3865f447c84d8e6ad7072c98cdf, type: 3}
+  m_Sprite: {fileID: -1214109257, guid: eb8f9eacd6964c94c895b9c0a5b05c18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -44365,6 +44365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike Dwarf_Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 6111424440019147535, guid: da7f9d13b7c50514ea3889e47627bb2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1182423019, guid: b3fa36261d9b9cc4492dc6423e8062d2, type: 3}
     - target: {fileID: 6111424440019147536, guid: da7f9d13b7c50514ea3889e47627bb2e, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -44818,9 +44822,9 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 8252c3fae0d9b224fb5f16b0995fc516, type: 2}
   health: 0
   AoECircle: {fileID: 4070442366842194862}
-  agent: {fileID: 0}
+  agent: {fileID: 5946405135719187340}
   parryBuff: 0
-  anim: {fileID: 0}
+  anim: {fileID: 3038510175369310903}
 --- !u!1001 &8649454308561516450
 PrefabInstance:
   m_ObjectHideFlags: 0
