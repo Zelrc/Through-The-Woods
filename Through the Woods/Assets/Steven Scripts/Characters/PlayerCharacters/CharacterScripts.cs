@@ -31,6 +31,7 @@ public class CharacterScripts : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("Test");
         //image = GetComponent<SpriteRenderer>();
         //image.sprite = character.art;
         agent = GetComponent<NavMeshAgent>();

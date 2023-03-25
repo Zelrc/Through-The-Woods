@@ -123,10 +123,11 @@ public class DragLine : MonoBehaviour
             selectUI.SetActive(false);
             foreach(GameObject currentCharacter in charactersMoving)
             {
+                Debug.Log(currentCharacter + "is moving");
                 LineRenderer tempLR = currentCharacter.GetComponent<LineRenderer>();
                 currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
                 tempLR.enabled = false;
-
+                
             }
             
         }
