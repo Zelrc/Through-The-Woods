@@ -28,7 +28,6 @@ public class DragLine : MonoBehaviour
 
     public GameObject selectUI;
 
-    public GameObject NavMeshTest;
 
     public static Action<CharacterScripts> characterCall;
     // Start is called before the first frame update
@@ -127,9 +126,9 @@ public class DragLine : MonoBehaviour
             {
                 Debug.Log(currentCharacter + "is moving");
                 LineRenderer tempLR = currentCharacter.GetComponent<LineRenderer>();
-                currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
-                NavMeshTest.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
                 tempLR.enabled = false;
+                currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
+                //tempLR.enabled = false;
                 
             }
             
