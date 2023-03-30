@@ -197,7 +197,6 @@ public class InGameUI : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         
         ActionPhase = false;
-        Debug.Log(ActionPhase);
         actionButton.interactable = true;
         skill1.interactable = true;
         skill2.interactable = true;

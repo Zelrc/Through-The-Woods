@@ -35,6 +35,8 @@ public class EnemyScript : MonoBehaviour
 
     float detectionRange;
 
+    bool moved = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,7 @@ public class EnemyScript : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         anim = GetComponent<Animator>();
         health = enemy.maxHealth;
+        
         //image.sprite = enemy.art;
 
         if(enemy.type == EnemyType.Melee)
@@ -62,6 +65,7 @@ public class EnemyScript : MonoBehaviour
     {
         if(!ActionPhase)
         {
+            moved = false;
             if (detectionRangeCircle.GetComponent<DetectionRange>().detected)
             {
                 if(Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) < 0.6f)
@@ -110,25 +114,27 @@ public class EnemyScript : MonoBehaviour
                     else
                     {
                         health--;
-                        GetHurt();
+                        GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
                     }
                     state = enemyState.IDLE;
                     break;
                 case enemyState.CHASE:
-                    agent.SetDestination(targetPos);
-                    lr.enabled = false;
-                    anim.SetBool("PlanMove", false);
-                    if (agent.remainingDistance <= agent.stoppingDistance && agent.velocity.sqrMagnitude == 0f)
+                    if(moved == false)
                     {
-                        anim.SetBool("Walk", false);
+                        agent.SetDestination(targetPos);
+                        lr.enabled = false;
+                        anim.SetBool("PlanMove", false);
+                        if (agent.remainingDistance <= agent.stoppingDistance && agent.velocity.sqrMagnitude == 0f)
+                        {
+                            anim.SetBool("Walk", false);
+                        }
+                        else
+                        {
+                            anim.SetBool("Walk", true);
+                        }
+                        moved = true;
                     }
-                    else
-                    {
-                        anim.SetBool("Walk", true);
-                    }
-                    
                     break;
-
             }
         }
 
@@ -141,11 +147,32 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    public void GetHurt()
+    public void GetHurt(Transform dmgSource)
     {
         anim.SetBool("Walk", false);
         anim.SetTrigger("Hit");
-        
+        Vector2 dir = (dmgSource.position - this.transform.position).normalized;
+
+        StartCoroutine(Knockback(dir));
+    }
+
+    IEnumerator Knockback(Vector2 dir)
+    {
+        agent.isStopped = true;
+        agent.ResetPath();
+        agent.updatePosition = false;
+
+        agent.angularSpeed = 0;
+        agent.velocity = -dir * 5;
+
+        yield return new WaitForSeconds(0.3f);
+
+        agent.updatePosition = true;
+        agent.angularSpeed = 120;
+        agent.velocity = Vector2.zero;
+        agent.isStopped = true;
+        agent.ResetPath();
+        anim.SetBool("Walk", false);
     }
 
     IEnumerator deathAnim()

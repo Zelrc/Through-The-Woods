@@ -38,7 +38,7 @@ public class MeleeController : MonoBehaviour
                                 if (enemy.GetComponent<EnemyScript>())
                                 {
                                     enemy.GetComponent<EnemyScript>().health -= slamScript.damage;
-                                    enemy.GetComponent<EnemyScript>().GetHurt();
+                                    enemy.GetComponent<EnemyScript>().GetHurt(this.transform);
 
                                     if (enemy.GetComponent<EnemyScript>().health <= 0)
                                     {
