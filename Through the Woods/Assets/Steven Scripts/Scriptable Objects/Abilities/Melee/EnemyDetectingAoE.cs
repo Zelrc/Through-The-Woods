@@ -44,26 +44,26 @@ public class EnemyDetectingAoE : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyScript>())
-        {
-            areEnemies = true;
-        }
-        
-    }
-
-    //private void OnTriggerStay2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
     //{
     //    if (collision.gameObject.GetComponent<EnemyScript>())
     //    {
     //        areEnemies = true;
     //    }
-    //    else
-    //    {
-    //        areEnemies = false;
-    //    }
+
     //}
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<EnemyScript>())
+        {
+            areEnemies = true;
+        }
+        else
+        {
+            areEnemies = false;
+        }
+    }
 
 
 

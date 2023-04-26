@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fd7a2d7625a894785a4f4255160dc7, type: 3}
   m_Name: TrackingProjectile
   m_EditorClassIdentifier: 
-  name: Tracking
-  skillSprite: {fileID: 0}
+  name: Tracking Projectile
+  description: Feya shoots a projectile which will keep follwing the target until
+    it hits something
+  skillSprite: {fileID: 931856102, guid: e679167988aa3d6499a00b8a38093511, type: 3}
   type: 1
   CD: 0
   active: 0
   damage: 1
   character: {fileID: 0}
   animationTime: 0
+  needTarget: 1
   targetEnemy: {fileID: 0}

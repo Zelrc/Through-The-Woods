@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2f598c78d0daa46be45cb011196ec2, type: 3}
+  m_Name: BOTW
+  m_EditorClassIdentifier: 
+  name: Blessing Of The Wind
+  description: Feya casts a blessing which will protect an ally for 1 turn from any
+    damage
+  skillSprite: {fileID: 1267320674, guid: 2c96d1e6cb40b8e46a23e5452caa657d, type: 3}
+  type: 5
+  CD: 2
+  active: 0
+  damage: 0
+  character: {fileID: 0}
+  animationTime: 0
+  needTarget: 1
+  targetAlly: {fileID: 0}

@@ -8,11 +8,14 @@ public enum SkillType
     Projectile,
     AoE,
     Heal,
-    SelfBuff
+    SelfBuff,
+    OtherBuff
 }
 public class AbilitySO : ScriptableObject
 {
     public new string name;
+
+    public string description;
 
     public Sprite skillSprite;
     public SkillType type;
@@ -25,6 +28,9 @@ public class AbilitySO : ScriptableObject
     public CharacterScripts character;
 
     public float animationTime;
+
+    public bool needTarget;
+
     public void Start()
     {
         

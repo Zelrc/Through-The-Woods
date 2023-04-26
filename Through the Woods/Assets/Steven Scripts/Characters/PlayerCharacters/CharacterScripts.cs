@@ -22,11 +22,18 @@ public class CharacterScripts : MonoBehaviour
     public NavMeshAgent agent;
 
     public bool parryBuff = false;
+    public bool BOTW = false;
     bool parryTurnOff = false;
+
+    public bool usedSkill = false;
+    bool usedSkillTurnOff = false;
 
     SpriteRenderer image;
 
     public Animator anim;
+
+    public bool SetMoved;
+    public int CDcosted;
     // Start is called before the first frame update
     
     void Start()
@@ -55,8 +62,6 @@ public class CharacterScripts : MonoBehaviour
             {
                 anim.SetBool("Parry", false);
             }
-           
-            
         }
         else
         {
@@ -65,7 +70,7 @@ public class CharacterScripts : MonoBehaviour
 
         if(ActionPhase)
         {
-            if(parryBuff)
+            if(parryBuff || BOTW)
             {
                 parryTurnOff = true;
             }
@@ -73,15 +78,31 @@ public class CharacterScripts : MonoBehaviour
             {
                 parryTurnOff = false;
             }
+
+            if(usedSkill)
+            {
+                usedSkillTurnOff = true;
+            }
+            else
+            {
+                usedSkillTurnOff = false;
+            }
         }
         else
         {
             if(parryTurnOff)
             {
+                BOTW = false;
                 //character.Skill2.active = false; //need to change
-
                 parryBuff = false;
+                parryTurnOff = false;
                 anim.SetTrigger("Idle");
+            }
+
+            if(usedSkillTurnOff)
+            {
+                usedSkill = false;
+                usedSkillTurnOff = false;
             }
         }
 

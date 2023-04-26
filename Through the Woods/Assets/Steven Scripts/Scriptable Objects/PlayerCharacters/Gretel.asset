@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a290ddb93962788489e76180757f6582, type: 3}
+  m_Name: Gretel
+  m_EditorClassIdentifier: 
+  name: {fileID: 21300000, guid: b8054fd72c75ec1499226745cfd45f4c, type: 3}
+  maxHealth: 8
+  art: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ecf3729b373ecfc438625c1bfcc5f6c2, type: 3}
+  Skill1: {fileID: 11400000, guid: 2020ad2de0e54054690bac762b5080c3, type: 2}
+  Skill2: {fileID: 11400000, guid: a81cf5336045c0546896666f724928f5, type: 2}
+  Skill3: {fileID: 11400000, guid: 98ab416ed5fd1e54a8dd2df1d3d3a70d, type: 2}

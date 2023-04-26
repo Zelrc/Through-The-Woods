@@ -21,7 +21,7 @@ public enum CharacterNames
 [CreateAssetMenu(fileName = "Player", menuName = "Character/Player Characters")]
 public class PlayerSOs : ScriptableObject
 {
-    public new string name;
+    public new Sprite name;
 
     public int maxHealth;
 
@@ -31,5 +31,4 @@ public class PlayerSOs : ScriptableObject
     public AbilitySO Skill1;
     public AbilitySO Skill2;
     public AbilitySO Skill3;
-    //public CharacterSkills Skill4;
 }

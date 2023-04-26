@@ -37,6 +37,11 @@ public class EnemyScript : MonoBehaviour
 
     bool moved = false;
 
+    public Transform shootingPos;
+    public GameObject projectile;
+
+    GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +61,7 @@ public class EnemyScript : MonoBehaviour
         }
         else if(enemy.type == EnemyType.Ranged)
         {
-            detectionRange = 3.0f;
+            detectionRange = 15.0f;
         }
     }
 
@@ -72,11 +77,13 @@ public class EnemyScript : MonoBehaviour
                 {
 
                 }
+
                 if (Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <= detectionRange)
                 {
                     state = enemyState.ATTACK;
                     anim.SetBool("PlanAttack", true);
                     anim.SetBool("PlanMove", false);
+                    Debug.Log("2");
                 }
                 else
                 {
@@ -90,6 +97,7 @@ public class EnemyScript : MonoBehaviour
                     lr.useWorldSpace = true;
                     lr.SetPosition(1, CalculateDrawingPoint(detectionRangeCircle.GetComponent<DetectionRange>().target));
                     targetPos = CalculatePoint(detectionRangeCircle.GetComponent<DetectionRange>().target);
+                    Debug.Log("1");
                 }
             }
             else
@@ -106,16 +114,28 @@ public class EnemyScript : MonoBehaviour
                 case enemyState.ATTACK:
                     anim.SetBool("PlanAttack", false);
                     anim.SetTrigger("Attack");
-                    if(detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff == false)
+                    if(enemy.type == EnemyType.Melee)
                     {
-                        detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health--;
-                        detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+                        if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff == false)
+                        {
+                            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health--;
+                            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+                        }
+                        else
+                        {
+                            health--;
+                            GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+                        }
                     }
-                    else
+                    else if(enemy.type == EnemyType.Ranged)
                     {
-                        health--;
-                        GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+                        Vector3 aimDir = detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position - shootingPos.position;
+                        float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
+                        bullet = Instantiate(projectile, shootingPos.position, shootingPos.rotation);
+                        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                        rb.AddForce(aimDir * 2.5f, ForceMode2D.Impulse);
                     }
+                    
                     state = enemyState.IDLE;
                     break;
                 case enemyState.CHASE:

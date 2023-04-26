@@ -25,6 +25,7 @@ public class DetectionRange : MonoBehaviour
     {
         targets = Physics2D.OverlapCircleAll(parent.transform.position, transform.localScale.x - 0.02f);
 
+        trueDetected = false;
         if(targets != null)
         {
             foreach(Collider2D character in targets)
@@ -53,6 +54,7 @@ public class DetectionRange : MonoBehaviour
         {
             trueDetected = false;
             detected = false;
+            target = null;
         }
     }
 
@@ -64,6 +66,6 @@ public class DetectionRange : MonoBehaviour
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.green;
-    //    Gizmos.DrawSphere(parent.transform.position, transform.localScale.x);
+    //    Gizmos.DrawSphere(parent.transform.position, transform.localScale.x - 0.02f);
     //}
 }

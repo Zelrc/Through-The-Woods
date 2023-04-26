@@ -2222,7 +2222,6 @@ GameObject:
   - component: {fileID: 8614860593141560728}
   - component: {fileID: 8614860593141560737}
   - component: {fileID: 8614860593141560738}
-  - component: {fileID: 8614860593141560739}
   - component: {fileID: 8614860593141560732}
   - component: {fileID: 8614860593141560733}
   m_Layer: 0
@@ -2377,27 +2376,8 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: a29852b21ef836240bdd86657490d357, type: 2}
   health: 5
   detectionRangeCircle: {fileID: 1870027705279248323}
---- !u!50 &8614860593141560739
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614860593141560729}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  shootingPos: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!120 &8614860593141560732
 LineRenderer:
   m_ObjectHideFlags: 0

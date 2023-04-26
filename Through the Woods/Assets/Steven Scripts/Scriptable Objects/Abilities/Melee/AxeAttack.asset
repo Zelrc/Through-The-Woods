@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536255e1a5c2c7f4d9f24c98d02ef692, type: 3}
+  m_Name: AxeAttack
+  m_EditorClassIdentifier: 
+  name: Axe Attack
+  description: An axe attack which deals damage to a single enemy surrounding Gretel
+  skillSprite: {fileID: -604245330, guid: c64a1cc16795c8543a6376cd75d5dcc6, type: 3}
+  type: 0
+  CD: 0
+  active: 0
+  damage: 3
+  character: {fileID: 0}
+  animationTime: 0

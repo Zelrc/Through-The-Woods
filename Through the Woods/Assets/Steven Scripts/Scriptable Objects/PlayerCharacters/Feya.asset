@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a290ddb93962788489e76180757f6582, type: 3}
-  m_Name: Hanzel
+  m_Name: Feya
   m_EditorClassIdentifier: 
-  name: 0
+  name: {fileID: 21300000, guid: 40d8a727f7a679449967edbb05da0332, type: 3}
   maxHealth: 8
   art: {fileID: 0}
-  portrait: {fileID: 0}
-  Skill1: {fileID: 11400000, guid: a81cf5336045c0546896666f724928f5, type: 2}
-  Skill2: {fileID: 11400000, guid: 98ab416ed5fd1e54a8dd2df1d3d3a70d, type: 2}
-  Skill3: {fileID: 11400000, guid: 2128c79a906b3ee4a8eb07fad43918cf, type: 2}
+  portrait: {fileID: 21300000, guid: edd140843e85f224d8605289c3318942, type: 3}
+  Skill1: {fileID: 11400000, guid: 2128c79a906b3ee4a8eb07fad43918cf, type: 2}
+  Skill2: {fileID: 11400000, guid: 0f290c6214d25f44d8de501571464fca, type: 2}
+  Skill3: {fileID: 11400000, guid: f7c087b07dd025c4881be77ec4535e8f, type: 2}

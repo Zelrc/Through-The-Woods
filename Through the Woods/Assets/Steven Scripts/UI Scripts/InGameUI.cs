@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using static DragLine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public enum selectedSkills
 {
@@ -25,10 +26,9 @@ public class InGameUI : MonoBehaviour
 
     [SerializeField] Button actionButton;
 
-    [SerializeField] Image HPBar;
     [SerializeField] TextMeshProUGUI HPText;
 
-    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] Image nameText;
 
     [SerializeField] GameObject UIPanel;
 
@@ -42,6 +42,18 @@ public class InGameUI : MonoBehaviour
     [SerializeField] Button restart;
     [SerializeField] Button exit2;
 
+    [SerializeField] GameObject skillPanel;
+    [SerializeField] Image skillImage;
+    [SerializeField] TextMeshProUGUI skillNameText;
+    [SerializeField] TextMeshProUGUI skillInfoText;
+    [SerializeField] TextMeshProUGUI dmgNumText;
+    [SerializeField] TextMeshProUGUI cdNumText;
+
+    [SerializeField] TextMeshProUGUI CDRemainingText;
+    [SerializeField] TextMeshProUGUI CDMaxText;
+    [SerializeField] Image CDbar;
+
+
     selectedSkills currentSkill = selectedSkills.NONE;
 
     public static CharacterScripts currentSelectedCharacter;
@@ -53,6 +65,8 @@ public class InGameUI : MonoBehaviour
     Coroutine changingPhase;
 
     [SerializeField] GameObject VIP;
+
+    public static Action closeSkillSelectUI;
 
     private void Awake()
     {
@@ -79,6 +93,8 @@ public class InGameUI : MonoBehaviour
     void Start()
     {
         killCount = 0;
+        CDRemainingText.text = "" + CDint;
+        
     }
 
     private void OnEnable()
@@ -94,16 +110,20 @@ public class InGameUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentSkill == selectedSkills.NONE)
-        {
-            skillActivation.interactable = false;
-        }
-        else
-        {
-            skillActivation.interactable = true;
-        }
+        //if(currentSkill == selectedSkills.NONE)
+        //{
+        //    skillActivation.interactable = false;
+        //}
+        //else
+        //{
+        //    skillActivation.interactable = true;
+        //}
 
-        if(killCount >= neededKill)
+        CDRemainingText.text = "" + CDint;
+        CDMaxText.text = "" + maxCDint;
+        CDbar.fillAmount = (float)(CDint) / (float)(maxCDint);
+
+        if (killCount >= neededKill)
         {
             WinUI.SetActive(true);
         }
@@ -120,41 +140,160 @@ public class InGameUI : MonoBehaviour
         currentSelectedCharacter = character;
         currentSelectedCharacter.agent.ResetPath();
         currentSelectedCharacter.agent.isStopped = false;
-        //skill1.GetComponent<Image>().sprite = character.character.Skill1.skillSprite;
-        //skill2.GetComponent<Image>().sprite = character.character.Skill2.skillSprite;
-        //skill3.GetComponent<Image>().sprite = character.character.Skill3.skillSprite;
+        skill1.GetComponent<Image>().sprite = character.character.Skill1.skillSprite;
+        skill2.GetComponent<Image>().sprite = character.character.Skill2.skillSprite;
+        skill3.GetComponent<Image>().sprite = character.character.Skill3.skillSprite;
 
-        //portrait.sprite = character.character.portrait;
+        portrait.sprite = character.character.portrait;
 
-        //nameText.text = character.character.name;
+        nameText.sprite = character.character.name;
 
         HPText.text = character.health.ToString() + "/" + character.character.maxHealth.ToString();
-        HPBar.fillAmount = (float)character.health / (float)(character.character.maxHealth);
+        
+        if(currentSelectedCharacter.usedSkill)
+        {
+            skill1.interactable = false;
+            skill2.interactable = false;
+            skill3.interactable = false;
+        }
+        else
+        {
+            skill1.interactable = true;
+            skill2.interactable = true;
+            skill3.interactable = true;
+        }
     }
 
     void SkillButton1Click()
     {
-        currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
-        currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
-        currentSelectedCharacter.character.Skill1.Activate(currentSelectedCharacter);
+        if(currentSkill != selectedSkills.ONE)
+        {
+            currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
+            currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
+            currentSelectedCharacter.character.Skill1.Activate(currentSelectedCharacter);
+            ShowSkillInfo(1);
+            currentSkill = selectedSkills.ONE;
+        }
+        else
+        {
+            skillPanel.SetActive(false);
+            choosingTarget = false;
+            currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
+            currentSkill = selectedSkills.NONE;
+            closeSkillSelectUI?.Invoke();
+        }
         
-        currentSkill = selectedSkills.ONE;
     }
 
     void SkillButton2Click()
     {
-        currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
-        currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
-        currentSelectedCharacter.character.Skill2.Activate(currentSelectedCharacter);
-        currentSkill = selectedSkills.TWO;
+        if(currentSkill != selectedSkills.TWO)
+        {
+            currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
+            currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
+            currentSelectedCharacter.character.Skill2.Activate(currentSelectedCharacter);
+            ShowSkillInfo(2);
+            currentSkill = selectedSkills.TWO;
+        }
+        else
+        {
+            skillPanel.SetActive(false);
+            choosingTarget = false;
+            currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
+            currentSkill = selectedSkills.NONE;
+            closeSkillSelectUI?.Invoke();
+        }
+        
     }
 
     void SkillButton3Click()
     {
-        currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
-        currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
-        currentSelectedCharacter.character.Skill3.Activate(currentSelectedCharacter);
-        currentSkill = selectedSkills.THREE;
+        if(currentSkill != selectedSkills.THREE)
+        {
+            currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
+            currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
+            currentSelectedCharacter.character.Skill3.Activate(currentSelectedCharacter);
+            ShowSkillInfo(3);
+            currentSkill = selectedSkills.THREE;
+        }
+        else
+        {
+            skillPanel.SetActive(false);
+            choosingTarget = false;
+            currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
+            currentSkill = selectedSkills.NONE;
+            closeSkillSelectUI?.Invoke();
+        }
+        
+    }
+
+    void ShowSkillInfo(int skillNum)
+    {
+        skillPanel.SetActive(true);
+        switch(skillNum)
+        {
+            case 1:
+                skillImage.sprite = currentSelectedCharacter.character.Skill1.skillSprite;
+                skillNameText.text = currentSelectedCharacter.character.Skill1.name;
+                skillInfoText.text = currentSelectedCharacter.character.Skill1.description;
+                dmgNumText.text = currentSelectedCharacter.character.Skill1.damage.ToString();
+                cdNumText.text = currentSelectedCharacter.character.Skill1.CD.ToString();
+                if(currentSelectedCharacter.character.Skill1.CD > CDint)
+                {
+                    skillActivation.interactable = false;
+                    enoughCD = false;
+                }
+                else
+                {
+                    enoughCD = true;
+                    if(!currentSelectedCharacter.character.Skill1.needTarget)
+                    {
+                        skillActivation.interactable = true;
+                    }
+                }
+                break;
+            case 2:
+                skillImage.sprite = currentSelectedCharacter.character.Skill2.skillSprite;
+                skillNameText.text = currentSelectedCharacter.character.Skill2.name;
+                skillInfoText.text = currentSelectedCharacter.character.Skill2.description;
+                dmgNumText.text = currentSelectedCharacter.character.Skill2.damage.ToString();
+                cdNumText.text = currentSelectedCharacter.character.Skill2.CD.ToString();
+                if (currentSelectedCharacter.character.Skill2.CD > CDint)
+                {
+                    skillActivation.interactable = false;
+                    enoughCD = false;
+                }
+                else
+                {
+                    enoughCD = true;
+                    if (!currentSelectedCharacter.character.Skill2.needTarget)
+                    {
+                        skillActivation.interactable = true;
+                    }
+                }
+                break;
+            case 3:
+                skillImage.sprite = currentSelectedCharacter.character.Skill3.skillSprite;
+                skillNameText.text = currentSelectedCharacter.character.Skill3.name;
+                skillInfoText.text = currentSelectedCharacter.character.Skill3.description;
+                dmgNumText.text = currentSelectedCharacter.character.Skill3.damage.ToString();
+                cdNumText.text = currentSelectedCharacter.character.Skill3.CD.ToString();
+                if (currentSelectedCharacter.character.Skill3.CD > CDint)
+                {
+                    skillActivation.interactable = false;
+                    enoughCD = false;
+                }
+                else
+                {
+                    enoughCD = true;
+                    if (!currentSelectedCharacter.character.Skill3.needTarget)
+                    {
+                        skillActivation.interactable = true;
+                    }
+                }
+                break;
+        }
+        
     }
 
     void UseSkillsConfirmation()
@@ -164,19 +303,26 @@ public class InGameUI : MonoBehaviour
             if (currentSkill == selectedSkills.ONE)
             {
                 currentSelectedCharacter.character.Skill1.UseSkill(currentSelectedCharacter);
+                CDint -= currentSelectedCharacter.character.Skill1.CD;
+                Debug.Log(CDint);
             }
             else if (currentSkill == selectedSkills.TWO)
             {
                 currentSelectedCharacter.character.Skill2.UseSkill(currentSelectedCharacter);
+                CDint -= currentSelectedCharacter.character.Skill2.CD;
             }
             else if (currentSkill == selectedSkills.THREE)
             {
                 currentSelectedCharacter.character.Skill3.UseSkill(currentSelectedCharacter);
+                CDint -= currentSelectedCharacter.character.Skill3.CD;
             }
             skill1.interactable = false;
             skill2.interactable = false;
             skill3.interactable = false;
             currentSkill = selectedSkills.NONE;
+            skillPanel.SetActive(false);
+            closeSkillSelectUI?.Invoke();
+            currentSelectedCharacter.usedSkill = true;
         }
         
     }
@@ -185,6 +331,7 @@ public class InGameUI : MonoBehaviour
         ActionPhase = true;
         actionButton.interactable = false;
         UIPanel.SetActive(false);
+        skillPanel.SetActive(false);
         StartCoroutine(changePhase());
         //if (changingPhase != null)
         //{
@@ -201,6 +348,8 @@ public class InGameUI : MonoBehaviour
         skill1.interactable = true;
         skill2.interactable = true;
         skill3.interactable = true;
+
+        CDint = maxCDint;
         
     }
 

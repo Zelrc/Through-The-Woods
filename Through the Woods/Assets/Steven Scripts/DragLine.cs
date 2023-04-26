@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class DragLine : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class DragLine : MonoBehaviour
     bool dragging;
     public static GameObject character;
     public static GameObject target;
+    public static bool allyTarget = false;
     bool colliderBlock;
     float characterRadius = 0.5f;
 
@@ -27,13 +29,36 @@ public class DragLine : MonoBehaviour
     Vector3 camOffset = new Vector3(0, 0, 10);
 
     public GameObject selectUI;
+    public GameObject skillSelectUI;
+    public GameObject skillInfoUI;
+    public GameObject mainUI;
 
+    public Button assignedConfirmSkillButton;
+    public static Button confirmSkillButton;
+
+    public static int CDint;
+    public static int maxCDint;
+    public int maxCD;
+    public static bool enoughCD = true;
 
     public static Action<CharacterScripts> characterCall;
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
+        confirmSkillButton = assignedConfirmSkillButton;
+        CDint = maxCD;
+        maxCDint = maxCD;
+    }
+
+    private void OnEnable()
+    {
+        InGameUI.closeSkillSelectUI += CloseSelectSkillUI;
+    }
+
+    private void OnDisable()
+    {
+        InGameUI.closeSkillSelectUI -= CloseSelectSkillUI;
     }
 
     // Update is called once per frame
@@ -63,17 +88,43 @@ public class DragLine : MonoBehaviour
 
                         selectUI.SetActive(true);
                         selectUI.transform.position = character.transform.position;
+
+                        if(character.GetComponent<CharacterScripts>().SetMoved)
+                        {
+                            CDint += character.GetComponent<CharacterScripts>().CDcosted;
+                            character.GetComponent<CharacterScripts>().SetMoved = false;
+                        }
+                    }
+                    else if(EventSystem.current.currentSelectedGameObject != null)
+                    {
+                        
                     }
                     else
                     {
                         selectUI.SetActive(false);
+                        mainUI.SetActive(false);
                     }
+                    skillSelectUI.SetActive(false);
                 }
                 else
                 {
+                    
                     if (hit.collider != null)
                     {
                         target = hit.transform.gameObject;
+
+                        if((target.GetComponent<CharacterScripts>() && allyTarget) || (target.GetComponent<EnemyScript>() && !allyTarget))
+                        {
+                            skillSelectUI.SetActive(true);
+                            skillSelectUI.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 1f, target.transform.position.z);
+                            
+                            if(enoughCD)
+                            {
+                                confirmSkillButton.interactable = true;
+                            }
+                            
+                        }
+                        
                         Debug.Log(target);
                     }
                 }
@@ -91,6 +142,7 @@ public class DragLine : MonoBehaviour
                     endPos = camera.ScreenToWorldPoint(Input.mousePosition) + camOffset;
 
                     lr.SetPosition(1, endPos);
+
                 }
 
                 if (Physics2D.CircleCast(endPos, characterRadius, Vector2.zero, 0))
@@ -107,15 +159,23 @@ public class DragLine : MonoBehaviour
 
                     dragging = false;
 
-                    if (!colliderBlock)
+                    float distance = Mathf.Abs(Vector2.Distance(endPos, startPos));
+                    Debug.Log(distance);
+
+                    int CDcost = (int)(distance / 1.0f);
+                    character.GetComponent<CharacterScripts>().CDcosted = CDcost;
+
+                    if (!colliderBlock && distance >= 1.0f && (CDint > CDcost)) //here calculate AP
                     {
                         charactersMoving.Add(character);
+                        CDint -= CDcost;
+                        character.GetComponent<CharacterScripts>().CDcosted = CDcost;
+                        character.GetComponent<CharacterScripts>().SetMoved = true;
                     }
                     else
                     {
                         lr.enabled = false;
                     }
-
                 }
             }
         }
@@ -128,13 +188,18 @@ public class DragLine : MonoBehaviour
                 tempLR.enabled = false;
                 currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
                 //tempLR.enabled = false;
-                
+                charactersMoving.Remove(currentCharacter);
+                character.GetComponent<CharacterScripts>().CDcosted = 0;
+                character.GetComponent<CharacterScripts>().SetMoved = false;
             }
             
         }
     }
 
-    
+    public void CloseSelectSkillUI()
+    {
+        skillSelectUI.SetActive(false);
+    }
 
     
 

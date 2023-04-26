@@ -5,9 +5,9 @@ using UnityEngine;
 public class BulletDestroy : MonoBehaviour
 {
     
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Hit");
         if(collision.gameObject.GetComponent<EnemyScript>())
         {
             collision.gameObject.GetComponent<EnemyScript>().health--;

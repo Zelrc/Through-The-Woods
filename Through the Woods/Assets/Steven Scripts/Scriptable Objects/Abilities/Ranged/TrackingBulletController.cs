@@ -27,7 +27,7 @@ public class TrackingBulletController : MonoBehaviour
                 if(bullet == null)
                 {
                     bullet = Instantiate(projectile, shootingPos.position, shootingPos.rotation);
-                    bullet.transform.DOMove(script.targetEnemy.transform.position, 0.4f);
+                    bullet.transform.DOMove(script.targetEnemy.transform.position, 0.6f);
                     script.active = false;
                 }
                 

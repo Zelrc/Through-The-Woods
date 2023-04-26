@@ -12,8 +12,10 @@ public class TrackingProjectile : AbilitySO
         //character.AoECircle.SetActive(true);
         target = null;
         choosingTarget = true;
+        allyTarget = false;
+        confirmSkillButton.interactable = false;
+
         Debug.Log("Choose ur target");
-        Debug.LogWarning(choosingTarget);
     }
 
     public override void Deactivate(CharacterScripts character)

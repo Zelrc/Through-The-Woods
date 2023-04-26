@@ -52,11 +52,12 @@ public class MeleeController : MonoBehaviour
                             //StartCoroutine(AnimationCour());
                             slamScript.active = false;
                             slamScript.character.AoECircle.SetActive(false);
-                            StartCoroutine(startAnimation());
+                            //StartCoroutine(startAnimation());
+                            slamScript.character.anim.SetTrigger("AoE");
                         }
                         else
                         {
-                        slamScript.character.AoECircle.SetActive(false);
+                            slamScript.character.AoECircle.SetActive(false);
                         }
 
                     }
@@ -78,18 +79,19 @@ public class MeleeController : MonoBehaviour
                 if (skillTurnOff)
                 {
                     skillTurnOff = false;
-                    //slamScript.active = false;
+                    slamScript.active = false;
                     slamScript.character.AoECircle.SetActive(false);
+
                 }
                 //slamScript.character.AoECircle.SetActive(false);
             }
         }
         else
         {
-            if(ActionPhase)
-            {
-                slamScript.character.AoECircle.SetActive(false);
-            }
+            //if(ActionPhase)
+            //{
+            //    slamScript.character.AoECircle.SetActive(false);
+            //}
             
         }
     }
@@ -97,6 +99,6 @@ public class MeleeController : MonoBehaviour
     IEnumerator startAnimation()
     {
         yield return new WaitForSeconds(0.5f);
-        slamScript.character.anim.SetTrigger("Attack");
+        slamScript.character.anim.SetTrigger("AoE");
     }
 }
