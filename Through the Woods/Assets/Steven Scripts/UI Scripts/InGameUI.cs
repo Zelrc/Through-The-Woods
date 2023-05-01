@@ -33,6 +33,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] GameObject UIPanel;
 
     [SerializeField] GameObject WinUI;
+    [SerializeField] TextMeshProUGUI enemykilledText;
 
     [SerializeField] Button next;
     [SerializeField] Button exit1;
@@ -67,6 +68,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] GameObject VIP;
 
     public static Action closeSkillSelectUI;
+    public static Action stopMovement;
 
     private void Awake()
     {
@@ -126,11 +128,14 @@ public class InGameUI : MonoBehaviour
         if (killCount >= neededKill)
         {
             WinUI.SetActive(true);
+            actionButton.gameObject.SetActive(false);
+
         }
 
         if(VIP.GetComponent<CharacterScripts>().health <= 0)
         {
             LoseUI.SetActive(true);
+            actionButton.gameObject.SetActive(false);
         }
     }
 
@@ -342,20 +347,20 @@ public class InGameUI : MonoBehaviour
     IEnumerator changePhase()
     {
         yield return new WaitForSeconds(1.2f);
+
         
         ActionPhase = false;
         actionButton.interactable = true;
         skill1.interactable = true;
         skill2.interactable = true;
         skill3.interactable = true;
-
+        stopMovement?.Invoke();
         CDint = maxCDint;
-        
     }
 
     void GoNextScene()
     {
-        SceneManager.LoadScene("Stage1_Second");
+        SceneManager.LoadScene(GetNextScene());
     }
 
     void RestartScene()
@@ -365,7 +370,66 @@ public class InGameUI : MonoBehaviour
 
     void ExitGame()
     {
-        Debug.Log("Exit");
-        Application.Quit();
+        SceneManager.LoadScene("Map_StageSelect");
+    }
+
+    string GetNextScene()
+    {
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "Stage1_First":
+                VideoSystem.videoName = "Stage1_Second";
+                return "VideoTesting";
+            case "Stage1_Second":
+                VideoSystem.videoName = "Stage1_Third";
+                return "VideoTesting";
+            case "Stage1_Third":
+                VideoSystem.videoName = "Stage2_1";
+                return "VideoTesting";
+            case "Stage2_1":
+                return "Stage2_2";
+            case "Stage2_2":
+                VideoSystem.videoName = "Stage2_3";
+                return "VideoTesting";
+            case "Stage2_3":
+                VideoSystem.videoName = "Stage3_1";
+                return "VideoTesting";
+            case "Stage3_1":
+                return "Stage3_2";
+            case "Stage3_2":
+                return "Stage3_3";
+            case "Stage3_3":
+                return "Stage4_1";
+            case "Stage4_1":
+                return "Stage4_2";
+            case "Stage4_2":
+                VideoSystem.videoName = "Stage4_3";
+                return "VideoTesting";
+            case "Stage4_3":
+                VideoSystem.videoName = "Stage4_4";
+                return "VideoTesting";
+            case "Stage4_4":
+                VideoSystem.videoName = "Stage5_1";
+                return "VideoTesting";
+            case "Stage5_1":
+                VideoSystem.videoName = "Stage5_2";
+                return "VideoTesting";
+            case "Stage5_2":
+                VideoSystem.videoName = "Stage5_3";
+                return "VideoTesting";
+            case "Stage5_3":
+                VideoSystem.videoName = "Stage6_1";
+                return "VideoTesting";
+            case "Stage6_1":
+                return "Stage6_2";
+            case "Stage6_2":
+                VideoSystem.videoName = "Stage6_3";
+                return "VideoTesting";
+            case "Stage6_3":
+                VideoSystem.videoName = "Ending";
+                return "VideoTesting";
+            default:
+                return "Main Menu";
+        }
     }
 }

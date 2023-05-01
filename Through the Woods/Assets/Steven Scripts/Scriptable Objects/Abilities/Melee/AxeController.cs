@@ -31,30 +31,27 @@ public class AxeController : MonoBehaviour
 
                     if (axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies != null)
                     {
-                        if (axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies.Length != 1)
-                        {
-                            if(axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies[0].GetComponent<EnemyScript>())
+                        //foreach (Collider2D enemy in axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList)
+                        //{
+                        Collider2D enemy = axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList[0];
+                            if (enemy.gameObject.GetComponent<EnemyScript>())
                             {
-                                axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies[0].GetComponent<EnemyScript>().health -= axeScript.damage;
-                                axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies[0].GetComponent<EnemyScript>().GetHurt(this.transform);
+                                enemy.GetComponent<EnemyScript>().health -= axeScript.damage;
+                                enemy.GetComponent<EnemyScript>().GetHurt(this.transform);
 
-                                if (axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies[0].GetComponent<EnemyScript>().health <= 0)
-                                {
-                                    axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
+                                axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
 
-                                    axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies = new Collider2D[] { };
-                                }
+                                axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList.Remove(enemy);
+                                
                             }
-                            //StartCoroutine(AnimationCour());
-                            axeScript.active = false;
-                            axeScript.character.AoECircle.SetActive(false);
-                            axeScript.character.anim.SetTrigger("Attack");
+
+                        //}
+                        //StartCoroutine(AnimationCour());
+                        axeScript.active = false;
+                        axeScript.character.AoECircle.SetActive(false);
+                        axeScript.character.anim.SetTrigger("Attack");
                             //StartCoroutine(startAnimation());
-                        }
-                        else
-                        {
-                            axeScript.character.AoECircle.SetActive(false);
-                        }
+                        
 
                     }
                     else
@@ -81,6 +78,7 @@ public class AxeController : MonoBehaviour
                 //}
                 //axeScript.character.AoECircle.SetActive(false);
             }
+            
         }
         else
         {
@@ -89,16 +87,18 @@ public class AxeController : MonoBehaviour
             //    axeScript.character.AoECircle.SetActive(false);
             //}
 
-            if(!ActionPhase)
-            {
-                if (skillTurnOff)
-                {
-                    skillTurnOff = false;
-                    axeScript.active = false;
-                    axeScript.character.AoECircle.SetActive(false);
-                }
-            }
+            
 
+        }
+
+        if (!ActionPhase)
+        {
+            if (skillTurnOff)
+            {
+                skillTurnOff = false;
+                axeScript.active = false;
+                axeScript.character.AoECircle.SetActive(false);
+            }
         }
     }
 

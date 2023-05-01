@@ -54,11 +54,13 @@ public class DragLine : MonoBehaviour
     private void OnEnable()
     {
         InGameUI.closeSkillSelectUI += CloseSelectSkillUI;
+        InGameUI.stopMovement += StopMoving;
     }
 
     private void OnDisable()
     {
         InGameUI.closeSkillSelectUI -= CloseSelectSkillUI;
+        InGameUI.stopMovement -= StopMoving;
     }
 
     // Update is called once per frame
@@ -163,7 +165,7 @@ public class DragLine : MonoBehaviour
                     Debug.Log(distance);
 
                     int CDcost = (int)(distance / 1.0f);
-                    character.GetComponent<CharacterScripts>().CDcosted = CDcost;
+                    //character.GetComponent<CharacterScripts>().CDcosted = CDcost;
 
                     if (!colliderBlock && distance >= 1.0f && (CDint > CDcost)) //here calculate AP
                     {
@@ -188,9 +190,9 @@ public class DragLine : MonoBehaviour
                 tempLR.enabled = false;
                 currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
                 //tempLR.enabled = false;
-                charactersMoving.Remove(currentCharacter);
-                character.GetComponent<CharacterScripts>().CDcosted = 0;
-                character.GetComponent<CharacterScripts>().SetMoved = false;
+                //charactersMoving.Remove(currentCharacter);
+                currentCharacter.GetComponent<CharacterScripts>().CDcosted = 0;
+                currentCharacter.GetComponent<CharacterScripts>().SetMoved = false;
             }
             
         }
@@ -201,6 +203,15 @@ public class DragLine : MonoBehaviour
         skillSelectUI.SetActive(false);
     }
 
+    public void StopMoving()
+    {
+        foreach (GameObject currentCharacter in charactersMoving)
+        {
+            currentCharacter.GetComponent<NavMeshAgent>().isStopped = true;
+            currentCharacter.GetComponent<NavMeshAgent>().ResetPath();
+        }
+        charactersMoving.Clear();
+    }
     
 
     //private void OnDrawGizmos()

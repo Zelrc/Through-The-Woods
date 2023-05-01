@@ -116,12 +116,12 @@ public class EnemyScript : MonoBehaviour
                     anim.SetTrigger("Attack");
                     if(enemy.type == EnemyType.Melee)
                     {
-                        if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff == false)
+                        if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
                         {
                             detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health--;
                             detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
                         }
-                        else
+                        else if(detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
                         {
                             health--;
                             GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);

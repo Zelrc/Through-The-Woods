@@ -22,6 +22,7 @@ public class MeleeController : MonoBehaviour
                 //slamScript.character.agent.isStopped = false;
                 
                 skillTurnOff = true;
+
                 if (slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies == true)
                 {
                     slamScript.character.agent.ResetPath();
@@ -29,23 +30,19 @@ public class MeleeController : MonoBehaviour
                     
                     slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().GetTargets();
 
-                    if(slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies != null)
+                    if(slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList != null)
                     {
-                        if (slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies.Length != 1)
-                        {
-                            foreach (Collider2D enemy in slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies)
+                        
+                            foreach (Collider2D enemy in slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList)
                             {
-                                if (enemy.GetComponent<EnemyScript>())
+                                if (enemy.gameObject.GetComponent<EnemyScript>())
                                 {
                                     enemy.GetComponent<EnemyScript>().health -= slamScript.damage;
                                     enemy.GetComponent<EnemyScript>().GetHurt(this.transform);
 
-                                    if (enemy.GetComponent<EnemyScript>().health <= 0)
-                                    {
-                                        slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
+                                    slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
                                         
-                                        slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemies = new Collider2D[] { };
-                                    }
+                                    slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList = new List<Collider2D>();
                                 }
 
                             }
@@ -54,11 +51,7 @@ public class MeleeController : MonoBehaviour
                             slamScript.character.AoECircle.SetActive(false);
                             //StartCoroutine(startAnimation());
                             slamScript.character.anim.SetTrigger("AoE");
-                        }
-                        else
-                        {
-                            slamScript.character.AoECircle.SetActive(false);
-                        }
+                        
 
                     }
                     else
@@ -74,17 +67,11 @@ public class MeleeController : MonoBehaviour
                     //slamScript.character.AoECircle.SetActive(false);
                 }
             }
-            else
-            {
-                if (skillTurnOff)
-                {
-                    skillTurnOff = false;
-                    slamScript.active = false;
-                    slamScript.character.AoECircle.SetActive(false);
-
-                }
+            
+            
+                
                 //slamScript.character.AoECircle.SetActive(false);
-            }
+            
         }
         else
         {
@@ -93,6 +80,17 @@ public class MeleeController : MonoBehaviour
             //    slamScript.character.AoECircle.SetActive(false);
             //}
             
+        }
+
+        if (!ActionPhase)
+        {
+            if (skillTurnOff)
+            {
+                skillTurnOff = false;
+                slamScript.active = false;
+                slamScript.character.AoECircle.SetActive(false);
+
+            }
         }
     }
 

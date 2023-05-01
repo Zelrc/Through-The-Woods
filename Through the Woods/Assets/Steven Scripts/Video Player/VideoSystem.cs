@@ -2,24 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class VideoSystem : MonoBehaviour
 {
     public VideoPlayer tv;
-    public VideoClip[] cg;
-    Queue<VideoClip> CG = new Queue<VideoClip>();
+    public VideoScriptableObject videoSO;
+
+    public static string videoName;
 
     private void Start()
     {
-        foreach (VideoClip cutscene in cg)
-        {
-            CG.Enqueue(cutscene);
-        }
+            tv.loopPointReached += GoToScene;
     }
-    public void PlayNextCG()
+
+    public void PlayCG()
     {
-        Debug.Log("Change clip");
-        tv.clip = CG.Dequeue();
+        tv.clip = videoSO.GetVideo(videoName);
         tv.Play();
+    }
+
+    void GoToScene(VideoPlayer tv)
+    {
+        SceneManager.LoadScene(videoName);
     }
 }

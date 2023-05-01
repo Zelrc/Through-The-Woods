@@ -4,23 +4,46 @@ using UnityEngine;
 using static InGameUI;
 using DG.Tweening;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform cameraPoint2;
-    [SerializeField] Transform characterPoint2;
+    [SerializeField] Transform gretelPoint2;
 
     [SerializeField] Transform cameraPoint3;
-    [SerializeField] Transform characterPoint3;
+    [SerializeField] Transform gretelPoint3;
+
+    [SerializeField] Transform cameraPoint4;
+    [SerializeField] Transform gretelPoint4;
+
+    [SerializeField] Transform cameraPoint5;
+    [SerializeField] Transform gretelPoint5;
+
+    [SerializeField] Transform feyaPoint2;
+    [SerializeField] Transform feyaPoint3;
+    [SerializeField] Transform feyaPoint4;
+    [SerializeField] Transform feyaPoint5;
 
     [SerializeField] int enemyThreshold1;
     [SerializeField] int enemyThreshold2;
+    [SerializeField] int enemyThreshold3;
+    [SerializeField] int enemyThreshold4;
 
     [SerializeField] GameObject MC;
+    [SerializeField] GameObject Feya;
 
+    [SerializeField] int stages;
+    [SerializeField] bool feyaJoined;
+
+    [SerializeField] Button actionButton;
 
     bool stage2 = false;
     bool stage3 = false;
+    bool stage4 = false;
+    bool stage5 = false;
+
+    
 
     Camera camera;
 
@@ -33,29 +56,134 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(killCount >= enemyThreshold2 && !stage3)
-        {
-            camera.transform.DOMove(cameraPoint3.position, 1.0f);
-            MC.GetComponent<NavMeshAgent>().ResetPath();
-            MC.GetComponent<NavMeshAgent>().isStopped = false;
-            MC.GetComponent<NavMeshAgent>().SetDestination(characterPoint3.position);
-            if (MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
-            {
-                MC.GetComponent<CharacterScripts>().health++;
-            }
-            stage3 = true;
-        }
-        else if(killCount >= enemyThreshold1 && !stage2)
+        if(killCount >= enemyThreshold1 && !stage2 && stages >= 2)
         {
             camera.transform.DOMove(cameraPoint2.position, 1.0f);
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
-            MC.GetComponent<NavMeshAgent>().SetDestination(characterPoint2.position);
-            if(MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
+            MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint2.position);
+            if (MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
             {
                 MC.GetComponent<CharacterScripts>().health++;
             }
+
+            if(feyaJoined)
+            {
+                Feya.GetComponent<NavMeshAgent>().ResetPath();
+                Feya.GetComponent<NavMeshAgent>().isStopped = false;
+                Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint2.position);
+            }
+            
+            StartCoroutine(TransitionCamera());
             stage2 = true;
+        }
+        else if(killCount >= enemyThreshold2 && !stage3 && stages >= 3)
+        {
+            camera.transform.DOMove(cameraPoint3.position, 1.0f);
+            MC.GetComponent<NavMeshAgent>().ResetPath();
+            MC.GetComponent<NavMeshAgent>().isStopped = false;
+            MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint3.position);
+            if (MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
+            {
+                MC.GetComponent<CharacterScripts>().health++;
+            }
+
+            if (feyaJoined)
+            {
+                Feya.GetComponent<NavMeshAgent>().ResetPath();
+                Feya.GetComponent<NavMeshAgent>().isStopped = false;
+                Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint3.position);
+            }
+            StartCoroutine(TransitionCamera());
+            stage3 = true;
+        }
+        else if(killCount >= enemyThreshold3 && !stage4 && stages >= 4)
+        {
+            camera.transform.DOMove(cameraPoint4.position, 1.0f);
+            MC.GetComponent<NavMeshAgent>().ResetPath();
+            MC.GetComponent<NavMeshAgent>().isStopped = false;
+            MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint4.position);
+            if (MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
+            {
+                MC.GetComponent<CharacterScripts>().health++;
+            }
+
+            if (feyaJoined)
+            {
+                Feya.GetComponent<NavMeshAgent>().ResetPath();
+                Feya.GetComponent<NavMeshAgent>().isStopped = false;
+                Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint4.position);
+            }
+            StartCoroutine(TransitionCamera());
+            stage4 = true;
+        }
+        else if(killCount >= enemyThreshold4 && !stage5 && stages >= 5)
+        {
+            camera.transform.DOMove(cameraPoint5.position, 1.0f);
+            MC.GetComponent<NavMeshAgent>().ResetPath();
+            MC.GetComponent<NavMeshAgent>().isStopped = false;
+            MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint5.position);
+            if (MC.GetComponent<CharacterScripts>().health < MC.GetComponent<CharacterScripts>().character.maxHealth)
+            {
+                MC.GetComponent<CharacterScripts>().health++;
+            }
+
+            if (feyaJoined)
+            {
+                Feya.GetComponent<NavMeshAgent>().ResetPath();
+                Feya.GetComponent<NavMeshAgent>().isStopped = false;
+                Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint5.position);
+            }
+            StartCoroutine(TransitionCamera());
+            stage5 = true;
+        }
+    }
+
+    IEnumerator TransitionCamera()
+    {
+        actionButton.interactable = false;
+        yield return new WaitForSeconds(0.5f);
+        if(feyaJoined)
+        {
+            while(!(Feya.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && Feya.GetComponent<NavMeshAgent>().remainingDistance == 0 && MC.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && MC.GetComponent<NavMeshAgent>().remainingDistance == 0))
+            {
+                yield return null;
+            }
+            actionButton.interactable = true;
+        }
+        else
+        {
+            while(!(MC.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && MC.GetComponent<NavMeshAgent>().remainingDistance == 0))
+            {
+                yield return null;
+            }
+            actionButton.interactable = true;
+        }
+    }
+
+    private bool CheckPathStatus()
+    {
+        if(feyaJoined)
+        {
+            if (Feya.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && Feya.GetComponent<NavMeshAgent>().remainingDistance == 0 && MC.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && MC.GetComponent<NavMeshAgent>().remainingDistance == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (MC.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && MC.GetComponent<NavMeshAgent>().remainingDistance == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

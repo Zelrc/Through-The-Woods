@@ -22,13 +22,15 @@ public class BOTWController : MonoBehaviour
                 if (botwScript.targetAlly == this.gameObject)
                 { 
                     this.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Buff");
+                    this.GetComponent<CharacterScripts>().BOTW = true;
                 }
                 else
                 {
                     botwScript.targetAlly.GetComponent<CharacterScripts>().anim.SetTrigger("BOTW");
                     this.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("CastBOTW");
+                    botwScript.targetAlly.GetComponent<CharacterScripts>().BOTW = true;
                 }
-                this.GetComponent<CharacterScripts>().BOTW = true;
+                
 
                 botwScript.active = false;
             }

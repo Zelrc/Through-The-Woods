@@ -59,7 +59,7 @@ public class DialogueManager : Singleton<DialogueManager>
         if(CG == true)
         {
             //need to switch and play mp4
-            video.PlayNextCG();
+            //video.PlayNextCG();
         }
 
         nameText.text = name;

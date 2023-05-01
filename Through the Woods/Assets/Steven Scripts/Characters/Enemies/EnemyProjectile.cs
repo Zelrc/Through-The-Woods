@@ -20,10 +20,13 @@ public class EnemyProjectile : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<CharacterScripts>())
         {
-            collision.gameObject.GetComponent<CharacterScripts>().health--;
-            collision.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+            if (!collision.gameObject.GetComponent<CharacterScripts>().parryBuff && !collision.gameObject.GetComponent<CharacterScripts>().BOTW)
+            {
+                collision.gameObject.GetComponent<CharacterScripts>().health--;
+                collision.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+            }
+                
         }
-
         Destroy(this.gameObject);
     }
 }
