@@ -12,7 +12,7 @@ public class DetectionRange : MonoBehaviour
 
     float longestDistance = 100;
 
-    Collider2D[] targets;
+    public Collider2D[] targets;
 
     
 
@@ -35,7 +35,7 @@ public class DetectionRange : MonoBehaviour
                     detected = true;
                     trueDetected = true;
                     float distance = Vector2.Distance(parent.transform.position, character.transform.position);
-                    if (distance < longestDistance)
+                    if (Mathf.Abs(distance) < longestDistance)
                     {
                         longestDistance = distance;
                         target = character.gameObject;

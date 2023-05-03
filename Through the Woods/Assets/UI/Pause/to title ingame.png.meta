@@ -144,10 +144,10 @@ TextureImporter:
       name: to title ingame_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 192
-        height: 32
+        x: 16
+        y: 51
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: to title ingame_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 32
+        x: 18
+        y: 33
+        width: 152
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,6 +178,90 @@ TextureImporter:
       bones: []
       spriteID: fc886d870d8023d40b0edde85d5b772f
       internalID: 114090126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: to title ingame_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 51
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c813bdf819ff73e48a780aebd594ccbc
+      internalID: 1594851536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: to title ingame_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 36
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661f6076b7ab94043ba41f22e8777d12
+      internalID: 330497652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: to title ingame_4
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 37
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9020442b0abb5c34fa14525f7bed584c
+      internalID: 1229506513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: to title ingame_5
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 149
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996832c547934ba4bada7b42295dafcd
+      internalID: 638712012
       vertices: []
       indices: 
       edges: []
@@ -193,8 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      to title ingame_2: 1594851536
+      to title ingame_3: 330497652
+      to title ingame_4: 1229506513
       to title ingame_1: 114090126
       to title ingame_0: 1955337293
+      to title ingame_5: 638712012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

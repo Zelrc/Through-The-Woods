@@ -38,6 +38,7 @@ public class EnemyScript : MonoBehaviour
     bool moved = false;
 
     public Transform shootingPos;
+    public Transform shootingPosUP;
     public GameObject projectile;
 
     GameObject bullet;
@@ -63,6 +64,10 @@ public class EnemyScript : MonoBehaviour
         {
             detectionRange = 15.0f;
         }
+        else if(enemy.type == EnemyType.Boss)
+        {
+            detectionRange = 6.0f;
+        }
     }
 
     // Update is called once per frame
@@ -71,7 +76,8 @@ public class EnemyScript : MonoBehaviour
         if(!ActionPhase)
         {
             moved = false;
-            if (detectionRangeCircle.GetComponent<DetectionRange>().detected)
+            anim.SetBool("Walk", false);
+            if (detectionRangeCircle.GetComponent<DetectionRange>().detected && health > 0)
             {
                 if(Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) < 0.6f)
                 {
@@ -83,7 +89,6 @@ public class EnemyScript : MonoBehaviour
                     state = enemyState.ATTACK;
                     anim.SetBool("PlanAttack", true);
                     anim.SetBool("PlanMove", false);
-                    Debug.Log("2");
                 }
                 else
                 {
@@ -97,7 +102,6 @@ public class EnemyScript : MonoBehaviour
                     lr.useWorldSpace = true;
                     lr.SetPosition(1, CalculateDrawingPoint(detectionRangeCircle.GetComponent<DetectionRange>().target));
                     targetPos = CalculatePoint(detectionRangeCircle.GetComponent<DetectionRange>().target);
-                    Debug.Log("1");
                 }
             }
             else
@@ -113,12 +117,13 @@ public class EnemyScript : MonoBehaviour
                     break;
                 case enemyState.ATTACK:
                     anim.SetBool("PlanAttack", false);
-                    anim.SetTrigger("Attack");
+                    
                     if(enemy.type == EnemyType.Melee)
                     {
+                        anim.SetTrigger("Attack");
                         if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
                         {
-                            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health--;
+                            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 2;
                             detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
                         }
                         else if(detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
@@ -129,11 +134,70 @@ public class EnemyScript : MonoBehaviour
                     }
                     else if(enemy.type == EnemyType.Ranged)
                     {
-                        Vector3 aimDir = detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position - shootingPos.position;
+                        Transform chosenShootingPos;
+                        if(detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position.y > transform.position.y)
+                        {
+                            chosenShootingPos = shootingPosUP;
+                        }
+                        else
+                        {
+                            chosenShootingPos = shootingPos;
+                        }
+                        anim.SetTrigger("Attack");
+                        Vector3 aimDir = detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position - chosenShootingPos.position;
                         float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
-                        bullet = Instantiate(projectile, shootingPos.position, shootingPos.rotation);
+                        bullet = Instantiate(projectile, chosenShootingPos.position, chosenShootingPos.rotation);
                         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                         rb.AddForce(aimDir * 2.5f, ForceMode2D.Impulse);
+                    }
+                    else if(enemy.type == EnemyType.Boss)
+                    {
+                        //Vector3 aimDir;
+                        float attkDist = Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position);
+                        if (attkDist >= 4.0f)
+                        {
+                            Transform chosenShootingPos;
+                            float force;
+                            if (detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position.y > transform.position.y)
+                            {
+                                chosenShootingPos = shootingPosUP;
+                                force = 2.5f;
+                                //aimDir = chosenShootingPos.position - detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position;
+                            }
+                            else
+                            {
+                                chosenShootingPos = shootingPos;
+                                force = 2.5f;
+                                //aimDir = detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position - chosenShootingPos.position;
+                            }
+                            anim.SetTrigger("Attack2");
+                            Vector3 aimDir = detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position - chosenShootingPos.position;
+                            bullet = Instantiate(projectile, chosenShootingPos.position, chosenShootingPos.rotation);
+                            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                            rb.AddForce(aimDir * force, ForceMode2D.Impulse);
+                        }
+                        else
+                        {
+                            targetPos = CalculatePoint(detectionRangeCircle.GetComponent<DetectionRange>().target);
+                            anim.SetTrigger("Attack");
+                            agent.SetDestination(targetPos);
+                            if(Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <=2)
+                            {
+                                if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
+                                {
+                                    detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 3;
+                                    detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+                                }
+                                else if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
+                                {
+                                    health--;
+                                    GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+                                    agent.isStopped = true;
+                                    agent.ResetPath();
+                                }
+                            }
+                        }
+                        
                     }
                     
                     state = enemyState.IDLE;
@@ -199,7 +263,7 @@ public class EnemyScript : MonoBehaviour
     {
         anim.SetBool("PlanMove", false);
         anim.SetBool("PlanAttack", false);
-        anim.SetTrigger("Dead");
+        anim.SetBool("Dead", true);
         yield return new WaitForSeconds(2f);
         killCount++;
         Destroy(this.gameObject);

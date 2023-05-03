@@ -21,22 +21,57 @@ public class MapUIControl : MonoBehaviour
 
     private void Awake()
     {
-        button1.onClick.RemoveListener(() => GoToScene("Stage1_First"));
-        button1.onClick.AddListener(() => GoToScene("Stage1_First"));
-        button2.onClick.RemoveListener(() => GoToScene("Stage1_Second"));
-        button2.onClick.AddListener(() => GoToScene("Stage1_Second"));
-        button3.onClick.RemoveListener(() => GoToScene("Stage1_Third"));
-        button3.onClick.AddListener(() => GoToScene("Stage1_Third"));
-        button4.onClick.RemoveListener(() => GoToScene("Stage2_1"));
-        button4.onClick.AddListener(() => GoToScene("Stage2_1"));
-        button5.onClick.RemoveListener(() => GoToScene("Stage2_2"));
-        button5.onClick.AddListener(() => GoToScene("Stage2_2"));
-        button6.onClick.RemoveListener(() => GoToScene("Stage2_3"));
-        button6.onClick.AddListener(() => GoToScene("Stage2_3"));
+        button1.onClick.RemoveListener(Level1);
+        button1.onClick.AddListener(Level1);
+        button2.onClick.RemoveListener(Level2);
+        button2.onClick.AddListener(Level2);
+        button3.onClick.RemoveListener(Level3);
+        button3.onClick.AddListener(Level3);
+        button4.onClick.RemoveListener(Level4);
+        button4.onClick.AddListener(Level4);
+        button5.onClick.RemoveListener(Level5);
+        button5.onClick.AddListener(Level5);
+        button6.onClick.RemoveListener(Level6);
+        button6.onClick.AddListener(Level6);
     }
    
     void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    void Level1()
+    {
+        VideoSystem.videoName = "Stage1_First";
+        SceneManager.LoadScene("VideoTesting");
+    }
+
+    void Level2()
+    {
+        VideoSystem.videoName = "Stage2_1";
+        SceneManager.LoadScene("VideoTesting");
+    }
+
+    void Level3()
+    {
+        VideoSystem.videoName = "Stage3_1";
+        SceneManager.LoadScene("VideoTesting");
+    }
+
+    void Level4()
+    {
+        SceneManager.LoadScene("Stage4_1");
+    }
+
+    void Level5()
+    {
+        VideoSystem.videoName = "Stage5_1";
+        SceneManager.LoadScene("VideoTesting");
+    }
+
+    void Level6()
+    {
+        VideoSystem.videoName = "Stage6_1";
+        SceneManager.LoadScene("VideoTesting");
     }
 }

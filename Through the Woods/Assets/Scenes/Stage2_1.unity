@@ -74327,6 +74327,10 @@ PrefabInstance:
       propertyPath: neededKill
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7519750145271438188, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
+      propertyPath: controlSystem
+      value: 
+      objectReference: {fileID: 1281041283}
     - target: {fileID: 7519750145271438191, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -75419,6 +75423,11 @@ PrefabInstance:
       objectReference: {fileID: 617963337}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddc4ebf1ca2235146bd30dca2735bc21, type: 3}
+--- !u!1 &1281041283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6261181615146765988, guid: ddc4ebf1ca2235146bd30dca2735bc21, type: 3}
+  m_PrefabInstance: {fileID: 1281041282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1296396375
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class UIIndicator : MonoBehaviour
     public void OnHover(GameObject button)
     {
         flyingUI.GetComponent<Image>().enabled = true;
-        flyingUI.transform.position = new Vector2(button.transform.position.x + 100, button.transform.position.y + 15);
+        flyingUI.transform.position = new Vector2(button.transform.position.x + 120, button.transform.position.y + 15);
     }
 
     public void ExitHover()

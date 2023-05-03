@@ -5,7 +5,8 @@ using UnityEngine;
 public enum EnemyType
 {
     Melee,
-    Ranged
+    Ranged,
+    Boss
 }
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "Character/Enemy")]

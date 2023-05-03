@@ -144,12 +144,12 @@ TextureImporter:
       name: resume_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 128
-        height: 32
+        x: 11
+        y: 83
+        width: 6
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: resume_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 128
-        height: 32
+        x: 13
+        y: 67
+        width: 97
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,6 +178,90 @@ TextureImporter:
       bones: []
       spriteID: e9bfe3f20b570d84da8474fed5aafd8d
       internalID: -850269014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resume_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 83
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eda20e8ce3166a4cba0d67275bdcae2
+      internalID: 1402494780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resume_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 68
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61814f2bcb529be4ab6e6a5533f1197c
+      internalID: 462762419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resume_4
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 69
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f54cd686e2f8b498319ad83e47d415
+      internalID: -331350109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resume_5
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 32
+        width: 98
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda88fab33c3a1844add66a5f29b93f2
+      internalID: 1762642302
       vertices: []
       indices: 
       edges: []
@@ -193,7 +277,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      resume_3: 462762419
+      resume_4: -331350109
       resume_1: -850269014
+      resume_5: 1762642302
+      resume_2: 1402494780
       resume_0: 1868273078
   spritePackingTag: 
   pSDRemoveMatte: 0

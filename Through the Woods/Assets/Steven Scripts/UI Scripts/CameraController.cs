@@ -25,6 +25,11 @@ public class CameraController : MonoBehaviour
     [SerializeField] Transform feyaPoint4;
     [SerializeField] Transform feyaPoint5;
 
+    [SerializeField] Transform berthaPoint2;
+    [SerializeField] Transform berthaPoint3;
+    [SerializeField] Transform berthaPoint4;
+    [SerializeField] Transform berthaPoint5;
+
     [SerializeField] int enemyThreshold1;
     [SerializeField] int enemyThreshold2;
     [SerializeField] int enemyThreshold3;
@@ -32,9 +37,11 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] GameObject MC;
     [SerializeField] GameObject Feya;
+    [SerializeField] GameObject Bertha;
 
     [SerializeField] int stages;
     [SerializeField] bool feyaJoined;
+    [SerializeField] bool berthaJoined;
 
     [SerializeField] Button actionButton;
 
@@ -58,7 +65,7 @@ public class CameraController : MonoBehaviour
     {
         if(killCount >= enemyThreshold1 && !stage2 && stages >= 2)
         {
-            camera.transform.DOMove(cameraPoint2.position, 1.0f);
+            camera.transform.DOMove(cameraPoint2.position, 1.5f);
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
             MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint2.position);
@@ -73,13 +80,20 @@ public class CameraController : MonoBehaviour
                 Feya.GetComponent<NavMeshAgent>().isStopped = false;
                 Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint2.position);
             }
-            
+
+            if (berthaJoined)
+            {
+                Bertha.GetComponent<NavMeshAgent>().ResetPath();
+                Bertha.GetComponent<NavMeshAgent>().isStopped = false;
+                Bertha.GetComponent<NavMeshAgent>().SetDestination(berthaPoint2.position);
+            }
+
             StartCoroutine(TransitionCamera());
             stage2 = true;
         }
         else if(killCount >= enemyThreshold2 && !stage3 && stages >= 3)
         {
-            camera.transform.DOMove(cameraPoint3.position, 1.0f);
+            camera.transform.DOMove(cameraPoint3.position, 1.5f);
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
             MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint3.position);
@@ -94,12 +108,20 @@ public class CameraController : MonoBehaviour
                 Feya.GetComponent<NavMeshAgent>().isStopped = false;
                 Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint3.position);
             }
+
+            if (berthaJoined)
+            {
+                Bertha.GetComponent<NavMeshAgent>().ResetPath();
+                Bertha.GetComponent<NavMeshAgent>().isStopped = false;
+                Bertha.GetComponent<NavMeshAgent>().SetDestination(berthaPoint3.position);
+            }
+
             StartCoroutine(TransitionCamera());
             stage3 = true;
         }
         else if(killCount >= enemyThreshold3 && !stage4 && stages >= 4)
         {
-            camera.transform.DOMove(cameraPoint4.position, 1.0f);
+            camera.transform.DOMove(cameraPoint4.position, 1.5f);
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
             MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint4.position);
@@ -114,12 +136,20 @@ public class CameraController : MonoBehaviour
                 Feya.GetComponent<NavMeshAgent>().isStopped = false;
                 Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint4.position);
             }
+
+            if (berthaJoined)
+            {
+                Bertha.GetComponent<NavMeshAgent>().ResetPath();
+                Bertha.GetComponent<NavMeshAgent>().isStopped = false;
+                Bertha.GetComponent<NavMeshAgent>().SetDestination(berthaPoint4.position);
+            }
+
             StartCoroutine(TransitionCamera());
             stage4 = true;
         }
         else if(killCount >= enemyThreshold4 && !stage5 && stages >= 5)
         {
-            camera.transform.DOMove(cameraPoint5.position, 1.0f);
+            camera.transform.DOMove(cameraPoint5.position, 1.5f);
             MC.GetComponent<NavMeshAgent>().ResetPath();
             MC.GetComponent<NavMeshAgent>().isStopped = false;
             MC.GetComponent<NavMeshAgent>().SetDestination(gretelPoint5.position);
@@ -134,6 +164,14 @@ public class CameraController : MonoBehaviour
                 Feya.GetComponent<NavMeshAgent>().isStopped = false;
                 Feya.GetComponent<NavMeshAgent>().SetDestination(feyaPoint5.position);
             }
+
+            if (berthaJoined)
+            {
+                Bertha.GetComponent<NavMeshAgent>().ResetPath();
+                Bertha.GetComponent<NavMeshAgent>().isStopped = false;
+                Bertha.GetComponent<NavMeshAgent>().SetDestination(berthaPoint5.position);
+            }
+
             StartCoroutine(TransitionCamera());
             stage5 = true;
         }
@@ -143,9 +181,17 @@ public class CameraController : MonoBehaviour
     {
         actionButton.interactable = false;
         yield return new WaitForSeconds(0.5f);
-        if(feyaJoined)
+        if(feyaJoined && !berthaJoined)
         {
             while(!(Feya.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && Feya.GetComponent<NavMeshAgent>().remainingDistance == 0 && MC.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && MC.GetComponent<NavMeshAgent>().remainingDistance == 0))
+            {
+                yield return null;
+            }
+            actionButton.interactable = true;
+        }
+        else if (feyaJoined && berthaJoined)
+        {
+            while (!(Feya.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && Feya.GetComponent<NavMeshAgent>().remainingDistance == 0 && MC.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && MC.GetComponent<NavMeshAgent>().remainingDistance == 0 && Bertha.GetComponent<NavMeshAgent>().pathStatus == NavMeshPathStatus.PathComplete && Bertha.GetComponent<NavMeshAgent>().remainingDistance == 0))
             {
                 yield return null;
             }

@@ -41,6 +41,8 @@ public class VideoScriptableObject : ScriptableObject
                 return L2M3;
             case "Stage3_1":
                 return L3M1;
+            case "Stage3_4":
+                return L3M4;
             case "Stage4_3":
                 return L4M3;
             case "Stage4_4":

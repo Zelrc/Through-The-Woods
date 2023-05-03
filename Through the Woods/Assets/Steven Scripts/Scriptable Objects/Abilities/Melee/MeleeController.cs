@@ -40,17 +40,20 @@ public class MeleeController : MonoBehaviour
                                     enemy.GetComponent<EnemyScript>().health -= slamScript.damage;
                                     enemy.GetComponent<EnemyScript>().GetHurt(this.transform);
 
-                                    slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
+
+                                    //slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
                                         
-                                    slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList = new List<Collider2D>();
+                                    //slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList = new List<Collider2D>();
                                 }
 
                             }
                             //StartCoroutine(AnimationCour());
                             slamScript.active = false;
                             slamScript.character.AoECircle.SetActive(false);
-                            //StartCoroutine(startAnimation());
-                            slamScript.character.anim.SetTrigger("AoE");
+                        slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().enemyList.Clear();
+                        slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
+                        //StartCoroutine(startAnimation());
+                        slamScript.character.anim.SetTrigger("AoE");
                         
 
                     }

@@ -51,7 +51,7 @@ public class EnemyDetectingAoE : MonoBehaviour
         if (collision.gameObject.GetComponent<EnemyScript>())
         {
             areEnemies = true;
-            enemyList = new List<Collider2D>();
+            //enemyList = new List<Collider2D>();
             if (!enemyList.Contains(collision))
             {
                 enemyList.Add(collision);
@@ -63,14 +63,12 @@ public class EnemyDetectingAoE : MonoBehaviour
 
     //private void OnTriggerExit2D(Collider2D collision)
     //{
-    //    areEnemies = true;
-
     //    if (!enemyList.Contains(collision))
     //    {
     //        enemyList.Remove(collision);
     //    }
 
-    //    if(enemyList.Count == 0)
+    //    if (enemyList.Count == 0)
     //    {
     //        areEnemies = false;
     //    }

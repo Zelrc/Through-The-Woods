@@ -29333,6 +29333,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 404585534, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447459359855067076, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7519750145271438187, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
       propertyPath: m_Name
       value: Canvas 1
@@ -29341,6 +29349,10 @@ PrefabInstance:
       propertyPath: VIP
       value: 
       objectReference: {fileID: 568273141}
+    - target: {fileID: 7519750145271438188, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
+      propertyPath: controlSystem
+      value: 
+      objectReference: {fileID: 787606355}
     - target: {fileID: 7519750145271438190, guid: 0924ef3a06ae5c547baae086e820456e, type: 3}
       propertyPath: m_SortingOrder
       value: 100
@@ -29678,6 +29690,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7570851927168752539, guid: b322b91e4d6bb7542b622815a5351a25, type: 3}
   m_PrefabInstance: {fileID: 760083305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &787606355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6261181615146765988, guid: ddc4ebf1ca2235146bd30dca2735bc21, type: 3}
+  m_PrefabInstance: {fileID: 1625673772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &793525165
 PrefabInstance:

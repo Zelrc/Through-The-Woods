@@ -54,6 +54,13 @@ public class InGameUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI CDMaxText;
     [SerializeField] Image CDbar;
 
+    bool paused = false;
+    [SerializeField] GameObject controlSystem;
+    [SerializeField] GameObject PauseMenu;
+
+    [SerializeField] Button continueButton;
+    [SerializeField] Button restartButton;
+    [SerializeField] Button quitButton;
 
     selectedSkills currentSkill = selectedSkills.NONE;
 
@@ -90,13 +97,20 @@ public class InGameUI : MonoBehaviour
         exit2.onClick.RemoveListener(ExitGame);
         exit1.onClick.AddListener(ExitGame);
         exit2.onClick.AddListener(ExitGame);
+
+        continueButton.onClick.RemoveListener(PauseGame);
+        continueButton.onClick.AddListener(PauseGame);
+        restartButton.onClick.RemoveListener(RestartScene);
+        restartButton.onClick.AddListener(RestartScene);
+        quitButton.onClick.RemoveListener(ExitGame);
+        quitButton.onClick.AddListener(ExitGame);
     }
     // Start is called before the first frame update
     void Start()
     {
         killCount = 0;
         CDRemainingText.text = "" + CDint;
-        
+        enemykilledText.text = "" + neededKill;
     }
 
     private void OnEnable()
@@ -132,10 +146,33 @@ public class InGameUI : MonoBehaviour
 
         }
 
-        if(VIP.GetComponent<CharacterScripts>().health <= 0)
+        if (VIP.GetComponent<CharacterScripts>().health <= 0)
         {
             LoseUI.SetActive(true);
             actionButton.gameObject.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        paused = !paused;
+
+        if (paused)
+        {
+            controlSystem.SetActive(false);
+            PauseMenu.SetActive(true);
+            actionButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            controlSystem.SetActive(true);
+            PauseMenu.SetActive(false);
+            actionButton.gameObject.SetActive(true);
         }
     }
 
@@ -360,7 +397,61 @@ public class InGameUI : MonoBehaviour
 
     void GoNextScene()
     {
+        if(SceneManager.GetActiveScene().name == "Stage1_Third" || SceneManager.GetActiveScene().name == "Stage2_3" || SceneManager.GetActiveScene().name == "Stage3_3" || SceneManager.GetActiveScene().name == "Stage3_4" || SceneManager.GetActiveScene().name == "Stage4_3" || SceneManager.GetActiveScene().name == "Stage4_4" || SceneManager.GetActiveScene().name == "Stage5_1" || SceneManager.GetActiveScene().name == "Stage6_3" || SceneManager.GetActiveScene().name == "Ending")
+        {
+            
+        }
+        if(SceneManager.GetActiveScene().name == "Stage1_Third")
+        {
+            if(MainMenu.levelCleared < 1)
+            {
+                MainMenu.levelCleared = 1;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
+        else if(SceneManager.GetActiveScene().name == "Stage2_3")
+        {
+            if (MainMenu.levelCleared < 2)
+            {
+                MainMenu.levelCleared = 2;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage3_3")
+        {
+            if (MainMenu.levelCleared < 3)
+            {
+                MainMenu.levelCleared = 3;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage4_3")
+        {
+            if (MainMenu.levelCleared < 4)
+            {
+                MainMenu.levelCleared = 4;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage5_1")
+        {
+            if (MainMenu.levelCleared < 5)
+            {
+                MainMenu.levelCleared = 5;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage6_3")
+        {
+            if (MainMenu.levelCleared < 6)
+            {
+                MainMenu.levelCleared = 6;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
+
         SceneManager.LoadScene(GetNextScene());
+       
     }
 
     void RestartScene()
@@ -399,6 +490,8 @@ public class InGameUI : MonoBehaviour
             case "Stage3_2":
                 return "Stage3_3";
             case "Stage3_3":
+                return "Stage3_4";
+            case "Stage3_4":
                 return "Stage4_1";
             case "Stage4_1":
                 return "Stage4_2";
@@ -412,12 +505,6 @@ public class InGameUI : MonoBehaviour
                 VideoSystem.videoName = "Stage5_1";
                 return "VideoTesting";
             case "Stage5_1":
-                VideoSystem.videoName = "Stage5_2";
-                return "VideoTesting";
-            case "Stage5_2":
-                VideoSystem.videoName = "Stage5_3";
-                return "VideoTesting";
-            case "Stage5_3":
                 VideoSystem.videoName = "Stage6_1";
                 return "VideoTesting";
             case "Stage6_1":
