@@ -9,6 +9,7 @@ public class AxeAttack : AbilitySO
     public override void Activate(CharacterScripts character)
     {
         character.AoECircle.SetActive(true);
+        
     }
 
     public override void Deactivate(CharacterScripts character)
@@ -22,5 +23,6 @@ public class AxeAttack : AbilitySO
     {
         character = _character;
         active = true;
+        playedSound = false;
     }
 }

@@ -39,6 +39,7 @@ public class MeleeSlam : AbilitySO
         //}
         character = _character;
         active = true;
+        playedSound = false;
     }
 
     

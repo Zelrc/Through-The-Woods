@@ -16,6 +16,8 @@ public class EndingScript : MonoBehaviour
     
     void MainMenu()
     {
+        AudioManager.Instance.Play("UISelectSound");
         SceneManager.LoadScene("Main Menu");
+        
     }
 }

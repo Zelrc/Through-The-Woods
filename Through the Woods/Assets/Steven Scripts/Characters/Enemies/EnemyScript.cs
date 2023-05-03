@@ -76,6 +76,11 @@ public class EnemyScript : MonoBehaviour
         if(!ActionPhase)
         {
             moved = false;
+            if(enemy.type == EnemyType.Boss)
+            {
+                AudioManager.Instance.StopPlaying("BossMove");
+            }
+            
             anim.SetBool("Walk", false);
             if (detectionRangeCircle.GetComponent<DetectionRange>().detected && health > 0)
             {
@@ -121,15 +126,18 @@ public class EnemyScript : MonoBehaviour
                     if(enemy.type == EnemyType.Melee)
                     {
                         anim.SetTrigger("Attack");
+                        AudioManager.Instance.Play("SpearAttack");
                         if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
                         {
                             detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 2;
+                            AudioManager.Instance.Play("Hurt");
                             detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
                         }
                         else if(detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
                         {
                             health--;
                             GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+                            AudioManager.Instance.Play("Parry");
                         }
                     }
                     else if(enemy.type == EnemyType.Ranged)
@@ -144,6 +152,7 @@ public class EnemyScript : MonoBehaviour
                             chosenShootingPos = shootingPos;
                         }
                         anim.SetTrigger("Attack");
+                        AudioManager.Instance.Play("ShootArrow");
                         Vector3 aimDir = detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position - chosenShootingPos.position;
                         float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
                         bullet = Instantiate(projectile, chosenShootingPos.position, chosenShootingPos.rotation);
@@ -175,11 +184,13 @@ public class EnemyScript : MonoBehaviour
                             bullet = Instantiate(projectile, chosenShootingPos.position, chosenShootingPos.rotation);
                             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                             rb.AddForce(aimDir * force, ForceMode2D.Impulse);
+                            AudioManager.Instance.Play("BossProjectile");
                         }
                         else
                         {
                             targetPos = CalculatePoint(detectionRangeCircle.GetComponent<DetectionRange>().target);
                             anim.SetTrigger("Attack");
+                            AudioManager.Instance.Play("BossMeleeAttack");
                             agent.SetDestination(targetPos);
                             if(Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <=2)
                             {
@@ -187,11 +198,13 @@ public class EnemyScript : MonoBehaviour
                                 {
                                     detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 3;
                                     detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+                                    AudioManager.Instance.Play("Hurt");
                                 }
                                 else if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
                                 {
                                     health--;
                                     GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+                                    AudioManager.Instance.Play("Parry");
                                     agent.isStopped = true;
                                     agent.ResetPath();
                                 }
@@ -211,10 +224,15 @@ public class EnemyScript : MonoBehaviour
                         if (agent.remainingDistance <= agent.stoppingDistance && agent.velocity.sqrMagnitude == 0f)
                         {
                             anim.SetBool("Walk", false);
+                            
                         }
                         else
                         {
                             anim.SetBool("Walk", true);
+                            if(enemy.type == EnemyType.Boss)
+                            {
+                                AudioManager.Instance.Play("BossMove");
+                            }
                         }
                         moved = true;
                     }
@@ -244,6 +262,7 @@ public class EnemyScript : MonoBehaviour
     {
         agent.isStopped = true;
         agent.ResetPath();
+        AudioManager.Instance.StopPlaying("BossMove");
         agent.updatePosition = false;
 
         agent.angularSpeed = 0;
@@ -264,7 +283,13 @@ public class EnemyScript : MonoBehaviour
         anim.SetBool("PlanMove", false);
         anim.SetBool("PlanAttack", false);
         anim.SetBool("Dead", true);
-        yield return new WaitForSeconds(2f);
+
+        yield return new WaitForSeconds(1f);
+
+        AudioManager.Instance.Play("Dead");
+
+        yield return new WaitForSeconds(1f);
+
         killCount++;
         Destroy(this.gameObject);
     }

@@ -28,6 +28,7 @@ public class TrackingProjectile : AbilitySO
         targetEnemy = target;
         choosingTarget = false;
         character = _character;
+        playedSound = false;
         
         if(targetEnemy.GetComponent<EnemyScript>())
         {

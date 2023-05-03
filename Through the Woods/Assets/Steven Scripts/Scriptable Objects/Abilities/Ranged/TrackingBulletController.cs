@@ -27,12 +27,15 @@ public class TrackingBulletController : MonoBehaviour
                 if(bullet == null)
                 {
                     bullet = Instantiate(projectile, shootingPos.position, shootingPos.rotation);
+                    if (!script.playedSound)
+                    {
+                        AudioManager.Instance.Play("Cast");
+                        script.playedSound = true;
+                    }
                     bullet.transform.DOMove(script.targetEnemy.transform.position, 0.6f);
                     script.active = false;
                 }
-                
             }
-            
         }
     }
 }

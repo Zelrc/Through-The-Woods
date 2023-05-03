@@ -21,5 +21,6 @@ public class HammerAttack : AbilitySO
     {
         character = _character;
         active = true;
+        playedSound = false;
     }
 }

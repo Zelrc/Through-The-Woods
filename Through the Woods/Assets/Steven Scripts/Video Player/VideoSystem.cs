@@ -36,6 +36,7 @@ public class VideoSystem : MonoBehaviour
 
     void Skip()
     {
+        AudioManager.Instance.Play("UISelectSound");
         tv.time += 1000f;
     }
 }

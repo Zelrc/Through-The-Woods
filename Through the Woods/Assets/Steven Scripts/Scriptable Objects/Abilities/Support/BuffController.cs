@@ -18,6 +18,11 @@ public class BuffController : MonoBehaviour
         {
             if(ActionPhase)
             {
+                if (!parryScript.playedSound)
+                {
+                    AudioManager.Instance.Play("Parry");
+                    parryScript.playedSound = true;
+                }
                 this.GetComponent<CharacterScripts>().parryBuff = true;
                 parryScript.active = false;
             }

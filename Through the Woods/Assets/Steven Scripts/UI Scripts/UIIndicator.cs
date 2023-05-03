@@ -23,6 +23,7 @@ public class UIIndicator : MonoBehaviour
     {
         flyingUI.GetComponent<Image>().enabled = true;
         flyingUI.transform.position = new Vector2(button.transform.position.x + 120, button.transform.position.y + 15);
+        AudioManager.Instance.Play("UIHoverSound");
     }
 
     public void ExitHover()

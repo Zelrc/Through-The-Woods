@@ -54,7 +54,12 @@ public class MeleeController : MonoBehaviour
                         slamScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies = false;
                         //StartCoroutine(startAnimation());
                         slamScript.character.anim.SetTrigger("AoE");
-                        
+                        if (!slamScript.playedSound)
+                        {
+                            AudioManager.Instance.Play("MeleeSlam");
+                            slamScript.playedSound = true;
+                        }
+
 
                     }
                     else

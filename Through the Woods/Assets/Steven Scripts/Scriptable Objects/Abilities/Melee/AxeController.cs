@@ -50,8 +50,14 @@ public class AxeController : MonoBehaviour
                         axeScript.active = false;
                         axeScript.character.AoECircle.SetActive(false);
                         axeScript.character.anim.SetTrigger("Attack");
-                            //StartCoroutine(startAnimation());
-                        
+
+                        if(!axeScript.playedSound)
+                        {
+                            AudioManager.Instance.Play("AxeAttack");
+                            axeScript.playedSound = true;
+                        }
+                        //StartCoroutine(startAnimation());
+
 
                     }
                     else
@@ -106,5 +112,6 @@ public class AxeController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         axeScript.character.anim.SetTrigger("Attack");
+
     }
 }

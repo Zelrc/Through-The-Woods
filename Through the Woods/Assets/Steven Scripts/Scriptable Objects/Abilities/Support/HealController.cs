@@ -20,6 +20,11 @@ public class HealController : MonoBehaviour
         {
             if (ActionPhase)
             {
+                if (!healScript.playedSound)
+                {
+                    AudioManager.Instance.Play("Heal");
+                    healScript.playedSound = true;
+                }
                 if (healScript.targetAlly == this.gameObject)
                 {
                     this.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("SelfHeal");

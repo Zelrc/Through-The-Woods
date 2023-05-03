@@ -22,6 +22,7 @@ public class Parry : AbilitySO
     {
         character = _character;
         active = true;
+        playedSound = false;
         //character.anim.SetTrigger("Jump");
         //character.anim.SetInteger("Direction", 0);
 

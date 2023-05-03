@@ -19,6 +19,11 @@ public class BOTWController : MonoBehaviour
         {
             if (ActionPhase)
             {
+                if (!botwScript.playedSound)
+                {
+                    AudioManager.Instance.Play("BOTW");
+                    botwScript.playedSound = true;
+                }
                 if (botwScript.targetAlly == this.gameObject)
                 { 
                     this.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Buff");

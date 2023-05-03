@@ -13,7 +13,8 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
 
         SaveData data = new SaveData(levelCleared, volumeLevel);
-
+        Debug.LogError(volumeLevel);
+        Debug.Log(data.volumeLevel);
         formatter.Serialize(stream, data);
         stream.Close();
     }
@@ -21,7 +22,7 @@ public static class SaveSystem
     public static SaveData LoadData()
     {
         string path = Application.persistentDataPath + "/ThroughTheWoods.fyp";
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
@@ -29,12 +30,15 @@ public static class SaveSystem
             SaveData data = formatter.Deserialize(stream) as SaveData;
             stream.Close();
 
+            Debug.LogWarning(data.volumeLevel);
+
             return data;
         }
         else
         {
             Debug.LogError("Save file not found in " + path);
-            return null;
+            Save(0, 1f);
+            return LoadData();
         }
     }
 }

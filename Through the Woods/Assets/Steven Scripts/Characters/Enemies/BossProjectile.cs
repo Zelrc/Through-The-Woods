@@ -25,6 +25,10 @@ public class BossProjectile : MonoBehaviour
                 collision.gameObject.GetComponent<CharacterScripts>().health -= 3;
                 collision.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
             }
+            else
+            {
+                AudioManager.Instance.Play("Parry");
+            }
             Destroy(this.gameObject);
         }
     }

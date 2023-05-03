@@ -31,6 +31,7 @@ public class AbilitySO : ScriptableObject
 
     public bool needTarget;
 
+    public bool playedSound;
     public void Start()
     {
         

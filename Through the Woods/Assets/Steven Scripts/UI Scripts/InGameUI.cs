@@ -74,6 +74,8 @@ public class InGameUI : MonoBehaviour
 
     [SerializeField] GameObject VIP;
 
+    bool playedEndSound = false;
+
     public static Action closeSkillSelectUI;
     public static Action stopMovement;
 
@@ -111,6 +113,8 @@ public class InGameUI : MonoBehaviour
         killCount = 0;
         CDRemainingText.text = "" + CDint;
         enemykilledText.text = "" + neededKill;
+
+        AudioManager.Instance.Play("BattleBGM");
     }
 
     private void OnEnable()
@@ -144,12 +148,23 @@ public class InGameUI : MonoBehaviour
             WinUI.SetActive(true);
             actionButton.gameObject.SetActive(false);
 
+            if(!playedEndSound)
+            {
+                AudioManager.Instance.Play("WinUI");
+                playedEndSound = true;
+            }
         }
 
         if (VIP.GetComponent<CharacterScripts>().health <= 0)
         {
             LoseUI.SetActive(true);
             actionButton.gameObject.SetActive(false);
+
+            if (playedEndSound)
+            {
+                AudioManager.Instance.Play("LoseUI");
+                playedEndSound = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -161,7 +176,7 @@ public class InGameUI : MonoBehaviour
     void PauseGame()
     {
         paused = !paused;
-
+        AudioManager.Instance.Play("UISelectSound");
         if (paused)
         {
             controlSystem.SetActive(false);
@@ -208,7 +223,8 @@ public class InGameUI : MonoBehaviour
 
     void SkillButton1Click()
     {
-        if(currentSkill != selectedSkills.ONE)
+        AudioManager.Instance.Play("SkillSelect");
+        if (currentSkill != selectedSkills.ONE)
         {
             currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
             currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
@@ -229,7 +245,8 @@ public class InGameUI : MonoBehaviour
 
     void SkillButton2Click()
     {
-        if(currentSkill != selectedSkills.TWO)
+        AudioManager.Instance.Play("SkillSelect");
+        if (currentSkill != selectedSkills.TWO)
         {
             currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
             currentSelectedCharacter.character.Skill3.Deactivate(currentSelectedCharacter);
@@ -250,7 +267,8 @@ public class InGameUI : MonoBehaviour
 
     void SkillButton3Click()
     {
-        if(currentSkill != selectedSkills.THREE)
+        AudioManager.Instance.Play("SkillSelect");
+        if (currentSkill != selectedSkills.THREE)
         {
             currentSelectedCharacter.character.Skill2.Deactivate(currentSelectedCharacter);
             currentSelectedCharacter.character.Skill1.Deactivate(currentSelectedCharacter);
@@ -340,7 +358,8 @@ public class InGameUI : MonoBehaviour
 
     void UseSkillsConfirmation()
     {
-        if(currentSkill != selectedSkills.NONE)
+        AudioManager.Instance.Play("SkillConfirm");
+        if (currentSkill != selectedSkills.NONE)
         {
             if (currentSkill == selectedSkills.ONE)
             {
@@ -370,6 +389,8 @@ public class InGameUI : MonoBehaviour
     }
     public void OnActionStage()
     {
+        //AudioManager.Instance.Play("ActionButton");
+        //AudioManager.Instance.Play("UISelectSound");
         ActionPhase = true;
         actionButton.interactable = false;
         UIPanel.SetActive(false);
@@ -449,18 +470,23 @@ public class InGameUI : MonoBehaviour
                 SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
             }
         }
-
+        AudioManager.Instance.Play("UISelectSound");
+        AudioManager.Instance.StopPlaying("BattleBGM");
         SceneManager.LoadScene(GetNextScene());
        
     }
 
     void RestartScene()
     {
+        AudioManager.Instance.Play("UISelectSound");
+        AudioManager.Instance.StopPlaying("BattleBGM");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void ExitGame()
     {
+        AudioManager.Instance.Play("UISelectSound");
+        AudioManager.Instance.StopPlaying("BattleBGM");
         SceneManager.LoadScene("Map_StageSelect");
     }
 

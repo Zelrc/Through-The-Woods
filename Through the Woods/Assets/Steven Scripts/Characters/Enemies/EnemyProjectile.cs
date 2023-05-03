@@ -24,6 +24,11 @@ public class EnemyProjectile : MonoBehaviour
             {
                 collision.gameObject.GetComponent<CharacterScripts>().health--;
                 collision.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+                AudioManager.Instance.Play("Hurt");
+            }
+            else
+            {
+                AudioManager.Instance.Play("Parry");
             }
                 
         }

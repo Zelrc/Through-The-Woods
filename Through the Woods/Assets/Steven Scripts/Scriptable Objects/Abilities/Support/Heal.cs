@@ -26,6 +26,7 @@ public class Heal : AbilitySO
         targetAlly = target;
         choosingTarget = false;
         character = _character;
+        playedSound = false;
 
         if (targetAlly.GetComponent<CharacterScripts>())
         {

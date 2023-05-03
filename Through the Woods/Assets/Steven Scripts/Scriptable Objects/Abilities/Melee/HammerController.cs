@@ -50,6 +50,11 @@ public class HammerController : MonoBehaviour
                         hammerScript.active = false;
                         hammerScript.character.AoECircle.SetActive(false);
                         hammerScript.character.anim.SetTrigger("Attack");
+                        if (!hammerScript.playedSound)
+                        {
+                            AudioManager.Instance.Play("AxeAttack");
+                            hammerScript.playedSound = true;
+                        }
                         //StartCoroutine(startAnimation());
 
 

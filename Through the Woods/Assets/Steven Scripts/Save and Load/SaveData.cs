@@ -10,8 +10,8 @@ public class SaveData
 
     public SaveData(int _levelCleared, float _volumelevel)
     {
-        _levelCleared = levelCleared;
-        _volumelevel = volumeLevel;
+        levelCleared = _levelCleared;
+        volumeLevel = _volumelevel;
     }
 
     
