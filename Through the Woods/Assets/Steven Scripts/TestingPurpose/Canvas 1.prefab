@@ -431,7 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -697,8 +697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132.00008, y: -129.77298}
-  m_SizeDelta: {x: 66, y: 52.454}
+  m_AnchoredPosition: {x: 132.00008, y: -120.77}
+  m_SizeDelta: {x: 66, y: 34.454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2464602810904193185
 CanvasRenderer:
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 4.9079885, y: 0.4495907, z: 2.8399057, w: 11.1330185}
+  m_margin: {x: 4.9079885, y: 0.4495907, z: 2.8399057, w: 1.0950823}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2858,8 +2858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -186}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -1, y: -122.86}
+  m_SizeDelta: {x: 200, y: 30.272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &430141619392160369
 CanvasRenderer:
@@ -2952,7 +2952,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -54.76621, z: 91.86554, w: 56.53274}
+  m_margin: {x: 0, y: -0.6062584, z: 91.86554, w: 0.086719014}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3114,8 +3114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75.94265, y: -145.00002}
-  m_SizeDelta: {x: 46.1147, y: 14}
+  m_AnchoredPosition: {x: 75.94265, y: -110.89101}
+  m_SizeDelta: {x: 46.1147, y: 54.205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3772520799771920854
 CanvasRenderer:
@@ -3208,7 +3208,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 46.301247, y: -54.76621, z: 46.024582, w: 56.53274}
+  m_margin: {x: 46.301247, y: -0.5611286, z: 46.024582, w: 0.3200597}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3830,8 +3830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: -163}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -115, y: -115.91}
+  m_SizeDelta: {x: 200, y: 44.163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6043071580299800077
 CanvasRenderer:
@@ -3861,7 +3861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c54679565f3dc014ab7ab05e45859373, type: 2}
   m_sharedMaterial: {fileID: -688487883307861532, guid: c54679565f3dc014ab7ab05e45859373, type: 2}
@@ -3924,7 +3924,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 46.301247, y: -54.76621, z: 91.86554, w: 56.53274}
+  m_margin: {x: 46.301247, y: -9.92992, z: 91.86554, w: -1.0183412}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5506,7 +5506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

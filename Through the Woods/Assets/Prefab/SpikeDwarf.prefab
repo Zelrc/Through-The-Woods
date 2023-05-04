@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detected: 0
   target: {fileID: 0}
+  targets: []
 --- !u!1 &3027367336010894690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2378,7 @@ MonoBehaviour:
   health: 5
   detectionRangeCircle: {fileID: 1870027705279248323}
   shootingPos: {fileID: 0}
+  shootingPosUP: {fileID: 0}
   projectile: {fileID: 0}
 --- !u!120 &8614860593141560732
 LineRenderer:
