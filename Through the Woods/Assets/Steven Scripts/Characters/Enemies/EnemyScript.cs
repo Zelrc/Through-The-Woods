@@ -126,19 +126,7 @@ public class EnemyScript : MonoBehaviour
                     if(enemy.type == EnemyType.Melee)
                     {
                         anim.SetTrigger("Attack");
-                        AudioManager.Instance.Play("SpearAttack");
-                        if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
-                        {
-                            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 2;
-                            AudioManager.Instance.Play("Hurt");
-                            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
-                        }
-                        else if(detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
-                        {
-                            health--;
-                            GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
-                            AudioManager.Instance.Play("Parry");
-                        }
+                        StartCoroutine(SpearAttack());
                     }
                     else if(enemy.type == EnemyType.Ranged)
                     {
@@ -188,27 +176,8 @@ public class EnemyScript : MonoBehaviour
                         }
                         else
                         {
-                            targetPos = CalculatePoint(detectionRangeCircle.GetComponent<DetectionRange>().target);
                             anim.SetTrigger("Attack");
-                            AudioManager.Instance.Play("BossMeleeAttack");
-                            agent.SetDestination(targetPos);
-                            if(Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <=2)
-                            {
-                                if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
-                                {
-                                    detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 3;
-                                    detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
-                                    AudioManager.Instance.Play("Hurt");
-                                }
-                                else if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
-                                {
-                                    health--;
-                                    GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
-                                    AudioManager.Instance.Play("Parry");
-                                    agent.isStopped = true;
-                                    agent.ResetPath();
-                                }
-                            }
+                            StartCoroutine(BossMelee());
                         }
                         
                     }
@@ -276,6 +245,50 @@ public class EnemyScript : MonoBehaviour
         agent.isStopped = true;
         agent.ResetPath();
         anim.SetBool("Walk", false);
+    }
+
+    IEnumerator SpearAttack()
+    {
+        yield return null;
+        
+        AudioManager.Instance.Play("SpearAttack");
+        if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
+        {
+            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 2;
+            AudioManager.Instance.Play("Hurt");
+            detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+        }
+        else if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
+        {
+            health--;
+            GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+            AudioManager.Instance.Play("Parry");
+        }
+    }
+
+    IEnumerator BossMelee()
+    {
+        yield return null;
+        targetPos = CalculatePoint(detectionRangeCircle.GetComponent<DetectionRange>().target);
+        AudioManager.Instance.Play("BossMeleeAttack");
+        agent.SetDestination(targetPos);
+        if (Vector2.Distance(transform.position, detectionRangeCircle.GetComponent<DetectionRange>().target.transform.position) <= 2)
+        {
+            if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
+            {
+                detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 3;
+                detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
+                AudioManager.Instance.Play("Hurt");
+            }
+            else if (detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff)
+            {
+                health--;
+                GetHurt(detectionRangeCircle.GetComponent<DetectionRange>().target.transform);
+                AudioManager.Instance.Play("Parry");
+                agent.isStopped = true;
+                agent.ResetPath();
+            }
+        }
     }
 
     IEnumerator deathAnim()
