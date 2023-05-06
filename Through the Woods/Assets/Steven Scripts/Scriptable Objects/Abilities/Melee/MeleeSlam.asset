@@ -16,8 +16,10 @@ MonoBehaviour:
   description: An axe attack which deals damage to all enemy surrounding Gretel
   skillSprite: {fileID: -2072449258, guid: 48f906edbe930e4489014ce75d45ec9b, type: 3}
   type: 0
-  CD: 0
+  CD: 1
   active: 0
   damage: 2
   character: {fileID: 0}
   animationTime: 2
+  needTarget: 0
+  playedSound: 0

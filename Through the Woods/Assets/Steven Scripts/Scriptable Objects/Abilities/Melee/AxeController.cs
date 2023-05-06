@@ -17,10 +17,10 @@ public class AxeController : MonoBehaviour
     {
         if (axeScript.active == true)
         {
+            axeScript.character.AoECircle.SetActive(true);
             if (ActionPhase)
             {
                 //axeScript.character.agent.isStopped = false;
-
                 skillTurnOff = true;
                 if (axeScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies == true)
                 {

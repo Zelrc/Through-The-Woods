@@ -16,10 +16,11 @@ MonoBehaviour:
   description: Feya heals 25% of the ally's HP
   skillSprite: {fileID: -1227296709, guid: 757055aa730ae634b918f44feca1340c, type: 3}
   type: 3
-  CD: 1
+  CD: 2
   active: 0
   damage: 0
   character: {fileID: 0}
   animationTime: 0
   needTarget: 1
+  playedSound: 0
   targetAlly: {fileID: 0}

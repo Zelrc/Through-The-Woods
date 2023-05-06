@@ -16,9 +16,10 @@ MonoBehaviour:
   description: A hammer attack which deals damage to a single enemy surrounding Bertha
   skillSprite: {fileID: 419796422, guid: 204ca2a7dcf4c524dad2c028763a68f0, type: 3}
   type: 0
-  CD: 2
+  CD: 3
   active: 0
   damage: 5
   character: {fileID: 0}
   animationTime: 0
   needTarget: 0
+  playedSound: 0

@@ -93,7 +93,8 @@ public class MainMenu : MonoBehaviour
 
         SaveSystem.Save(levelCleared, volumeLevel);
         AudioManager.Instance.StopPlaying("MainMenuBGM");
-        SceneManager.LoadScene("Map_StageSelect");
+        VideoSystem.videoName = "Map_StageSelect";
+        SceneManager.LoadScene("VideoTesting");
     }
 
     public void LoadGame()

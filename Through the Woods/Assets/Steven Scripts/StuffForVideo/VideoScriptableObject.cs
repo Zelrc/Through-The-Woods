@@ -6,6 +6,7 @@ using UnityEngine.Video;
 [CreateAssetMenu(fileName = "VideoSO", menuName = "ScriptableObjects/VideoSO")]
 public class VideoScriptableObject : ScriptableObject
 {
+    [SerializeField] VideoClip newGame;
     [SerializeField] VideoClip L1M1;
     [SerializeField] VideoClip L1M2;
     [SerializeField] VideoClip L1M3;
@@ -29,6 +30,8 @@ public class VideoScriptableObject : ScriptableObject
     {
         switch(videoName)
         {
+            case "Map_StageSelect":
+                return newGame;
             case "Stage1_First":
                 return L1M1;
             case "Stage1_Second":

@@ -17,7 +17,8 @@ public class MeleeController : MonoBehaviour
     {
         if(slamScript.active == true)
         {
-            if(ActionPhase)
+            slamScript.character.AoECircle.SetActive(true);
+            if (ActionPhase)
             {
                 //slamScript.character.agent.isStopped = false;
                 

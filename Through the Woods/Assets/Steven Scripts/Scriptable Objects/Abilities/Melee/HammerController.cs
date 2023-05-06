@@ -15,12 +15,13 @@ public class HammerController : MonoBehaviour
     }
     void Update()
     {
+
         if (hammerScript.active == true)
         {
+            hammerScript.character.AoECircle.SetActive(true);
             if (ActionPhase)
             {
                 //hammerScript.character.agent.isStopped = false;
-
                 skillTurnOff = true;
                 if (hammerScript.character.AoECircle.GetComponent<EnemyDetectingAoE>().areEnemies == true)
                 {

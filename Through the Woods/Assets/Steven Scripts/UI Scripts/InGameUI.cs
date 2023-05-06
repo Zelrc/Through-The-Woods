@@ -384,6 +384,7 @@ public class InGameUI : MonoBehaviour
             skillPanel.SetActive(false);
             closeSkillSelectUI?.Invoke();
             currentSelectedCharacter.usedSkill = true;
+            tutorialAtk = true;
         }
         
     }

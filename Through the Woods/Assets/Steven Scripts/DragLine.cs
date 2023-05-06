@@ -41,6 +41,16 @@ public class DragLine : MonoBehaviour
     public int maxCD;
     public static bool enoughCD = true;
 
+    public bool isTutorial = false;
+    bool tutorialClick;
+    bool tutorialMoved;
+    public static bool tutorialAtk = false;
+
+    public GameObject clickTutorial;
+    public GameObject moveTutorial;
+    public GameObject atkTutorial;
+    public GameObject tutorialPanel;
+
     public static Action<CharacterScripts> characterCall;
     // Start is called before the first frame update
     void Start()
@@ -91,6 +101,14 @@ public class DragLine : MonoBehaviour
                         selectUI.SetActive(true);
                         selectUI.transform.position = character.transform.position;
 
+                        if(isTutorial && !tutorialClick)
+                        {
+                            clickTutorial.SetActive(false);
+                            tutorialClick = true;
+                            moveTutorial.SetActive(true);
+
+                        }
+
                         if(character.GetComponent<CharacterScripts>().SetMoved)
                         {
                             CDint += character.GetComponent<CharacterScripts>().CDcosted;
@@ -105,6 +123,11 @@ public class DragLine : MonoBehaviour
                     {
                         selectUI.SetActive(false);
                         mainUI.SetActive(false);
+                        skillInfoUI.SetActive(false);
+                        if(character.GetComponent<CharacterScripts>().AoECircle != null)
+                        {
+                            character.GetComponent<CharacterScripts>().AoECircle.SetActive(false);
+                        }
                     }
                     skillSelectUI.SetActive(false);
                 }
@@ -194,7 +217,19 @@ public class DragLine : MonoBehaviour
                 currentCharacter.GetComponent<CharacterScripts>().CDcosted = 0;
                 currentCharacter.GetComponent<CharacterScripts>().SetMoved = false;
             }
-            
+            if (isTutorial && !tutorialMoved && tutorialClick && !tutorialAtk)
+            {
+                tutorialMoved = true;
+                moveTutorial.SetActive(false);
+                atkTutorial.SetActive(true);
+
+            }
+
+            if (isTutorial && tutorialAtk && tutorialClick && tutorialMoved)
+            {
+                tutorialPanel.SetActive(false);
+
+            }
         }
     }
 
