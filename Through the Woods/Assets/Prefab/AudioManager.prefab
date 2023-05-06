@@ -44,4 +44,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1840915cdeaf9fe438791e3e66ef5a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundArray: []
+  soundArray:
+  - name: BattleBGM
+    clip: {fileID: 8300000, guid: f30beea57b633414d952603923480523, type: 3}
+    loop: 1
+    source: {fileID: 0}
+  - name: Heal
+    clip: {fileID: 8300000, guid: 44ac2cfafb5be984f8055d829c3d2942, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 0d62660a9126766418561419753bdb35, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: AxeAttack
+    clip: {fileID: 8300000, guid: 6557cce3c50c8ce48b24c649a3fc20ea, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: MeleeSlam
+    clip: {fileID: 8300000, guid: 1f3b7d1add7177d43acaa4a64913d677, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: Cast
+    clip: {fileID: 8300000, guid: b24279c7ee918904a980ae445f2666cd, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: BOTW
+    clip: {fileID: 8300000, guid: 21f5a811ede7046428a1d1e16992575b, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: HammerAttack
+    clip: {fileID: 8300000, guid: 729a98a88c2a7f449a4b89979916fc57, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: SpearAttack
+    clip: {fileID: 8300000, guid: afc573a0bf4715342864422393c8da9b, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: BossMove
+    clip: {fileID: 8300000, guid: 0b3e4c2e26cd3114c87523a013f95355, type: 3}
+    loop: 1
+    source: {fileID: 0}
+  - name: ShootArrow
+    clip: {fileID: 8300000, guid: d32ab634e40ee914cbcb9e15bcd9328e, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: BossMeleeAttack
+    clip: {fileID: 8300000, guid: 1483f36825f49e1498a1f83db18813c8, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: BossProjectile
+    clip: {fileID: 8300000, guid: 927a3888bbca4cb4e824cdcc6cc5a0c9, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: Parry
+    clip: {fileID: 8300000, guid: ecf0a32012c43ff4cabbf545a6baba66, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: SkillSelect
+    clip: {fileID: 8300000, guid: f5ec6f9195e98f5459353e3e8b9a0a0a, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: SkillConfirm
+    clip: {fileID: 8300000, guid: ac561b1b5f425fa4a8aaabe25b331acb, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: ActionButton
+    clip: {fileID: 8300000, guid: 4436987d92522f74892255461f94283b, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: UIHoverSound
+    clip: {fileID: 8300000, guid: 10665663e39781d488e9c804836bdf81, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: UISelectSound
+    clip: {fileID: 8300000, guid: 87274d2534c4aee49b11b82975723e46, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: WinUI
+    clip: {fileID: 8300000, guid: 39ab1a412ea0bef4f883d77acd166111, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: LoseUI
+    clip: {fileID: 8300000, guid: db4f85be5483cd647b4bee383e057dff, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: MainMenuBGM
+    clip: {fileID: 8300000, guid: c0c23fb413a764c4c8565cbf6b0adafe, type: 3}
+    loop: 1
+    source: {fileID: 0}
+  - name: MapChosing
+    clip: {fileID: 8300000, guid: 396eda6ac7030b44bb062b6d85782ed3, type: 3}
+    loop: 1
+    source: {fileID: 0}
+  - name: Dead
+    clip: {fileID: 8300000, guid: 2f8783ad88e9baa49bd2e5d849a84953, type: 3}
+    loop: 0
+    source: {fileID: 0}
