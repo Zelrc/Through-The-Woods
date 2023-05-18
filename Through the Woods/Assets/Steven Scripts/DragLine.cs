@@ -212,8 +212,6 @@ public class DragLine : MonoBehaviour
                 LineRenderer tempLR = currentCharacter.GetComponent<LineRenderer>();
                 tempLR.enabled = false;
                 currentCharacter.GetComponent<NavMeshAgent>().SetDestination(tempLR.GetPosition(1));
-                //tempLR.enabled = false;
-                //charactersMoving.Remove(currentCharacter);
                 currentCharacter.GetComponent<CharacterScripts>().CDcosted = 0;
                 currentCharacter.GetComponent<CharacterScripts>().SetMoved = false;
             }

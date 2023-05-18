@@ -63,6 +63,10 @@ public class MapUIControl : MonoBehaviour
         {
             button6.interactable = false;
         }
+        else
+        {
+            button6.interactable = true;
+        }
 
         if(MainMenu.levelCleared > 3)
         {

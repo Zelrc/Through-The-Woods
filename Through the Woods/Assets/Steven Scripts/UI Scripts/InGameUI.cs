@@ -115,6 +115,14 @@ public class InGameUI : MonoBehaviour
         enemykilledText.text = "" + neededKill;
 
         AudioManager.Instance.Play("BattleBGM");
+        if (SceneManager.GetActiveScene().name == "Stage5_1")
+        {
+            if (MainMenu.levelCleared < 5)
+            {
+                MainMenu.levelCleared = 5;
+                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+            }
+        }
     }
 
     private void OnEnable()
@@ -152,6 +160,54 @@ public class InGameUI : MonoBehaviour
             {
                 AudioManager.Instance.Play("WinUI");
                 playedEndSound = true;
+                if (SceneManager.GetActiveScene().name == "Stage1_Third")
+                {
+                    if (MainMenu.levelCleared < 1)
+                    {
+                        MainMenu.levelCleared = 1;
+                        SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name == "Stage2_3")
+                {
+                    if (MainMenu.levelCleared < 2)
+                    {
+                        MainMenu.levelCleared = 2;
+                        SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name == "Stage3_3")
+                {
+                    if (MainMenu.levelCleared < 3)
+                    {
+                        MainMenu.levelCleared = 3;
+                        SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name == "Stage4_3")
+                {
+                    if (MainMenu.levelCleared < 4)
+                    {
+                        MainMenu.levelCleared = 4;
+                        SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name == "Stage5_1")
+                {
+                    if (MainMenu.levelCleared < 5)
+                    {
+                        MainMenu.levelCleared = 5;
+                        SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name == "Stage6_3")
+                {
+                    if (MainMenu.levelCleared < 6)
+                    {
+                        MainMenu.levelCleared = 6;
+                        SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
+                    }
+                }
             }
         }
 
@@ -240,7 +296,6 @@ public class InGameUI : MonoBehaviour
             currentSkill = selectedSkills.NONE;
             closeSkillSelectUI?.Invoke();
         }
-        
     }
 
     void SkillButton2Click()
@@ -396,6 +451,8 @@ public class InGameUI : MonoBehaviour
         actionButton.interactable = false;
         UIPanel.SetActive(false);
         skillPanel.SetActive(false);
+        choosingTarget = false;
+        closeSkillSelectUI?.Invoke();
         StartCoroutine(changePhase());
         //if (changingPhase != null)
         //{
@@ -419,58 +476,7 @@ public class InGameUI : MonoBehaviour
 
     void GoNextScene()
     {
-        if(SceneManager.GetActiveScene().name == "Stage1_Third" || SceneManager.GetActiveScene().name == "Stage2_3" || SceneManager.GetActiveScene().name == "Stage3_3" || SceneManager.GetActiveScene().name == "Stage3_4" || SceneManager.GetActiveScene().name == "Stage4_3" || SceneManager.GetActiveScene().name == "Stage4_4" || SceneManager.GetActiveScene().name == "Stage5_1" || SceneManager.GetActiveScene().name == "Stage6_3" || SceneManager.GetActiveScene().name == "Ending")
-        {
-            
-        }
-        if(SceneManager.GetActiveScene().name == "Stage1_Third")
-        {
-            if(MainMenu.levelCleared < 1)
-            {
-                MainMenu.levelCleared = 1;
-                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
-            }
-        }
-        else if(SceneManager.GetActiveScene().name == "Stage2_3")
-        {
-            if (MainMenu.levelCleared < 2)
-            {
-                MainMenu.levelCleared = 2;
-                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == "Stage3_3")
-        {
-            if (MainMenu.levelCleared < 3)
-            {
-                MainMenu.levelCleared = 3;
-                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == "Stage4_3")
-        {
-            if (MainMenu.levelCleared < 4)
-            {
-                MainMenu.levelCleared = 4;
-                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == "Stage5_1")
-        {
-            if (MainMenu.levelCleared < 5)
-            {
-                MainMenu.levelCleared = 5;
-                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == "Stage6_3")
-        {
-            if (MainMenu.levelCleared < 6)
-            {
-                MainMenu.levelCleared = 6;
-                SaveSystem.Save(MainMenu.levelCleared, MainMenu.volumeLevel);
-            }
-        }
+        
         AudioManager.Instance.Play("UISelectSound");
         AudioManager.Instance.StopPlaying("BattleBGM");
         SceneManager.LoadScene(GetNextScene());
@@ -517,7 +523,8 @@ public class InGameUI : MonoBehaviour
             case "Stage3_2":
                 return "Stage3_3";
             case "Stage3_3":
-                return "Stage3_4";
+                VideoSystem.videoName = "Stage3_4";
+                return "VideoTesting";
             case "Stage3_4":
                 return "Stage4_1";
             case "Stage4_1":

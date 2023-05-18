@@ -13,6 +13,4 @@ public class SaveData
         levelCleared = _levelCleared;
         volumeLevel = _volumelevel;
     }
-
-    
 }
