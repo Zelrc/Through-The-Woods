@@ -27,7 +27,7 @@ public class DevPanel : MonoBehaviour
     {
         AudioManager.Instance.StopPlaying("BattleBGM");
         bool gotVideo = true;
-        if(name == "Stage2_2" || name == "Stage3_2" || name == "Stage3_3" || name == "Stage3_2" || name == "Stage4_1" || name == "Stage4_2" || name == "Stage6_2")
+        if(name == "Stage1_Second" || name == "Stage2_2" || name == "Stage3_2" || name == "Stage3_3" || name == "Stage3_2" || name == "Stage4_1" || name == "Stage4_2" || name == "Stage6_2")
         {
             gotVideo = false;
         }

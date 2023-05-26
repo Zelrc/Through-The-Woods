@@ -255,11 +255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8614860593141560734, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 8614860593141560734, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.63
+      value: 30.81
       objectReference: {fileID: 0}
     - target: {fileID: 8614860593141560734, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
       propertyPath: m_LocalPosition.z
@@ -293,8 +293,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8614860593141560738, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
+      propertyPath: teamMember.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614860593141560738, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
+      propertyPath: teamMember.Array.data[0]
+      value: 
+      objectReference: {fileID: 1847306489}
+    - target: {fileID: 8614860593141560738, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
+      propertyPath: teamMember.Array.data[1]
+      value: 
+      objectReference: {fileID: 1004976439}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
+--- !u!1 &125455891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8614860593141560729, guid: 8d0fe0083cbaec843bf75ba2b4b5e619, type: 3}
+  m_PrefabInstance: {fileID: 125455890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &134432701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6399,17 +6416,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer_Dwarf_Idle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5050127098907315141, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+      propertyPath: teamMember.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050127098907315141, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+      propertyPath: teamMember.Array.data[0]
+      value: 
+      objectReference: {fileID: 1847306489}
+    - target: {fileID: 5050127098907315141, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+      propertyPath: teamMember.Array.data[1]
+      value: 
+      objectReference: {fileID: 125455891}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.64
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.83
+      value: 31.96
       objectReference: {fileID: 0}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6445,6 +6474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+--- !u!1 &1004976439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5050127098907315138, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+  m_PrefabInstance: {fileID: 1004976438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1023512540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24115,7 +24149,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -24139,7 +24173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532646472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92, y: 32.3, z: -10}
+  m_LocalPosition: {x: 2.26, y: 31.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50245,17 +50279,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer_Dwarf_Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 5050127098907315141, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+      propertyPath: teamMember.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050127098907315141, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+      propertyPath: teamMember.Array.data[0]
+      value: 
+      objectReference: {fileID: 125455891}
+    - target: {fileID: 5050127098907315141, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+      propertyPath: teamMember.Array.data[1]
+      value: 
+      objectReference: {fileID: 1004976439}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.015437
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.357723
+      value: 32.56
       objectReference: {fileID: 0}
     - target: {fileID: 5050127098907315145, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50291,6 +50337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+--- !u!1 &1847306489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5050127098907315138, guid: 6f5822b1793a2804baecbdb4a8810884, type: 3}
+  m_PrefabInstance: {fileID: 1847306488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1972818705
 PrefabInstance:
   m_ObjectHideFlags: 0

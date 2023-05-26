@@ -14,7 +14,9 @@ public class DetectionRange : MonoBehaviour
 
     public Collider2D[] targets;
 
-    
+    public bool alerted = false;
+
+    public Transform attackTarget;
 
     private void Start()
     {
@@ -41,6 +43,12 @@ public class DetectionRange : MonoBehaviour
                         target = character.gameObject;
                     }
                 }
+                else if (alerted && !detected)
+                {
+                    detected = true;
+                    trueDetected = true;
+                    target = attackTarget.gameObject;
+                }
                 else
                 {
                     if(!trueDetected)
@@ -50,12 +58,13 @@ public class DetectionRange : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            trueDetected = false;
-            detected = false;
-            target = null;
-        }
+        
+        //else
+        //{
+        //    trueDetected = false;
+        //    detected = false;
+        //    target = null;
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

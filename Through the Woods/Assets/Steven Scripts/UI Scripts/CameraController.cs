@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
     bool stage4 = false;
     bool stage5 = false;
 
-    
+    [SerializeField] GameObject controls;
 
     Camera camera;
 
@@ -179,6 +179,7 @@ public class CameraController : MonoBehaviour
 
     IEnumerator TransitionCamera()
     {
+        controls.SetActive(false);
         actionButton.interactable = false;
         yield return new WaitForSeconds(0.5f);
         if(feyaJoined && !berthaJoined)
@@ -188,6 +189,7 @@ public class CameraController : MonoBehaviour
                 yield return null;
             }
             actionButton.interactable = true;
+            controls.SetActive(true);
         }
         else if (feyaJoined && berthaJoined)
         {
@@ -195,6 +197,7 @@ public class CameraController : MonoBehaviour
             {
                 yield return null;
             }
+            controls.SetActive(true);
             actionButton.interactable = true;
         }
         else
@@ -203,6 +206,7 @@ public class CameraController : MonoBehaviour
             {
                 yield return null;
             }
+            controls.SetActive(true); 
             actionButton.interactable = true;
         }
     }

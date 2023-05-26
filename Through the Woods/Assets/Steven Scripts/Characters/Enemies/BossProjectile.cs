@@ -26,7 +26,7 @@ public class BossProjectile : MonoBehaviour
         {
             if (!collision.gameObject.GetComponent<CharacterScripts>().parryBuff && !collision.gameObject.GetComponent<CharacterScripts>().BOTW)
             {
-                collision.gameObject.GetComponent<CharacterScripts>().health -= 3;
+                collision.gameObject.GetComponent<CharacterScripts>().health -= 4;
                 collision.gameObject.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
             }
             else

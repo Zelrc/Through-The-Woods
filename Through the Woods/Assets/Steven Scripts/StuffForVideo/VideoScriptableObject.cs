@@ -8,7 +8,6 @@ public class VideoScriptableObject : ScriptableObject
 {
     [SerializeField] VideoClip newGame;
     [SerializeField] VideoClip L1M1;
-    [SerializeField] VideoClip L1M2;
     [SerializeField] VideoClip L1M3;
 
     [SerializeField] VideoClip L2M1;
@@ -34,8 +33,6 @@ public class VideoScriptableObject : ScriptableObject
                 return newGame;
             case "Stage1_First":
                 return L1M1;
-            case "Stage1_Second":
-                return L1M2;
             case "Stage1_Third":
                 return L1M3;
             case "Stage2_1":

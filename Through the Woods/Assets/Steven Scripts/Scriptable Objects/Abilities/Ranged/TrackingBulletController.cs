@@ -33,6 +33,7 @@ public class TrackingBulletController : MonoBehaviour
                         script.playedSound = true;
                     }
                     bullet.transform.DOMove(script.targetEnemy.transform.position, 0.6f);
+                    bullet.GetComponent<BulletDestroy>().feya = this.gameObject;
                     script.active = false;
                 }
             }

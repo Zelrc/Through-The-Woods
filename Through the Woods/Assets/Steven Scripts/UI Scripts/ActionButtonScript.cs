@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActionButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    Animator anim;
+     public Animator anim;
 
     void Start()
     {

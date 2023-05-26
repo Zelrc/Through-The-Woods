@@ -4,6 +4,7 @@ using UnityEngine;
 using static DragLine;
 using static InGameUI;
 using UnityEngine.AI;
+using System;
 
 public enum enemyState
 {
@@ -42,6 +43,9 @@ public class EnemyScript : MonoBehaviour
     public GameObject projectile;
 
     GameObject bullet;
+
+    public GameObject[] teamMember;
+
 
     // Start is called before the first frame update
     void Start()
@@ -224,7 +228,39 @@ public class EnemyScript : MonoBehaviour
         anim.SetTrigger("Hit");
         Vector2 dir = (dmgSource.position - this.transform.position).normalized;
 
+        if(!detectionRangeCircle.GetComponent<DetectionRange>().detected)
+        {
+            detectionRangeCircle.GetComponent<DetectionRange>().alerted = true;
+            if(dmgSource.GetComponent<CharacterScripts>())
+            {
+                detectionRangeCircle.GetComponent<DetectionRange>().attackTarget = dmgSource;
+            }
+            else if(dmgSource.GetComponent<BulletDestroy>())
+            {
+                detectionRangeCircle.GetComponent<DetectionRange>().attackTarget = dmgSource.GetComponent<BulletDestroy>().feya.transform;
+            } 
+        }
+
+        Alert(dmgSource);
+
+        
         StartCoroutine(Knockback(dir));
+    }
+
+    void Alert(Transform dmgSource)
+    {
+        foreach(GameObject member in teamMember)
+        {
+            member.GetComponent<EnemyScript>().detectionRangeCircle.GetComponent<DetectionRange>().alerted = true;
+            if (dmgSource.GetComponent<CharacterScripts>())
+            {
+                member.GetComponent<EnemyScript>().detectionRangeCircle.GetComponent<DetectionRange>().attackTarget = dmgSource;
+            }
+            else if (dmgSource.GetComponent<BulletDestroy>())
+            {
+                member.GetComponent<EnemyScript>().detectionRangeCircle.GetComponent<DetectionRange>().attackTarget = dmgSource.GetComponent<BulletDestroy>().feya.transform;
+            }
+        }
     }
 
     IEnumerator Knockback(Vector2 dir)
@@ -276,7 +312,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (!detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().parryBuff && !detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().BOTW)
             {
-                detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 3;
+                detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().health -= 4;
                 detectionRangeCircle.GetComponent<DetectionRange>().target.GetComponent<CharacterScripts>().anim.SetTrigger("Hit");
                 AudioManager.Instance.Play("Hurt");
             }

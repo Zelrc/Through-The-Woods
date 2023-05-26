@@ -227,6 +227,27 @@ public class InGameUI : MonoBehaviour
         {
             PauseGame();
         }
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SkillButton1Click();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SkillButton2Click();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SkillButton3Click();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space) && actionButton.interactable)
+        {
+            actionButton.GetComponent<ActionButtonScript>().anim.SetTrigger("Clicked");
+            OnActionStage();
+        }
     }
 
     void PauseGame()
@@ -502,8 +523,7 @@ public class InGameUI : MonoBehaviour
         switch(SceneManager.GetActiveScene().name)
         {
             case "Stage1_First":
-                VideoSystem.videoName = "Stage1_Second";
-                return "VideoTesting";
+                return "Stage1_Second";
             case "Stage1_Second":
                 VideoSystem.videoName = "Stage1_Third";
                 return "VideoTesting";
